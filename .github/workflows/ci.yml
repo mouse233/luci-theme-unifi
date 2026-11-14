@@ -57,6 +57,7 @@ jobs:
       - name: Collector storage and template checks
         run: |
           vendor/ucode/build/ucode tests/activity-store.uc
+          vendor/ucode/build/ucode tests/presence-state.uc
           for template in ucode/template/themes/unifi/*.ut; do
             vendor/ucode/build/ucode -T -c,dynlink=luci.core,dynlink=uci -o /dev/null "$template"
           done

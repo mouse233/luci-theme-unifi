@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add optional background client online detection using validated ARP replies and recent network activity, with conservative offline thresholds and last-confirmed timestamps.
+
+### Changed
+
+- Replace client record-source labels in the status column with online, offline, or unavailable status.
+
 ## [1.0.1] - 2026-11-14
 
 ### Added
