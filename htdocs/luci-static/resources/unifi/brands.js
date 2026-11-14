@@ -1,10 +1,13 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 'use strict';
 'require baseclass';
-'require unifi.brand-data as catalog';
+'require unifi.vendor-data as vendors';
+'require unifi.brand-map as catalog';
+'require unifi.icon-data as icons';
 
 // Hostnames are hints, including user-assigned names. Never present a match
-// as a verified hardware model. Local MACs are excluded from OUI lookups.
+// as a verified hardware model. Local MACs are excluded from OUI lookups;
+// QEMU's conventional local prefix is identified separately as a virtual NIC.
 var rules = [
 	[/iphone/i, 'apple', 'phone'], [/ipad/i, 'apple', 'tablet'],
 	[/macbook|imac|mac[-_ ]?(mini|pro|studio)/i, 'apple', 'computer'],
@@ -40,7 +43,29 @@ var rules = [
 	[/nas|storage|存储/i, null, 'storage'], [/laptop|desktop|\bpc\b|电脑/i, null, 'computer'],
 	[/home[-_ ]?assistant|smart[-_ ]?plug|zigbee/i, null, 'iot']
 ];
-var prefixes;
+var tables = {};
+
+function registryMatch(mac) {
+	var sizes = [36, 28, 24];
+	for (var n = 0; n < sizes.length; n++) {
+		var bits = sizes[n], width = Math.ceil(bits / 8), stride = width + 2;
+		if (!tables[bits]) {
+			var decoded = atob(vendors.tables[bits]);
+			var bytes = tables[bits] = new Uint8Array(decoded.length);
+			for (var i = 0; i < decoded.length; i++) bytes[i] = decoded.charCodeAt(i);
+		}
+		var table = tables[bits], target = parseInt(mac.slice(0, bits / 4), 16) * (bits % 8 ? 16 : 1);
+		var low = 0, high = table.length / stride - 1;
+		while (low <= high) {
+			var mid = (low + high) >>> 1, offset = mid * stride, prefix = 0;
+			for (var j = 0; j < width; j++) prefix = prefix * 256 + table[offset + j];
+			if (prefix < target) low = mid + 1;
+			else if (prefix > target) high = mid - 1;
+			else return vendors.names[(table[offset + width] << 8) | table[offset + width + 1]];
+		}
+	}
+	return null;
+}
 var glyphs = {
 	phone: 'M7 2h10v20H7zM10 19h4', tablet: 'M4 2h16v20H4zM11 19h2',
 	computer: 'M2 3h20v14H2zM12 17v4M7 21h10', tv: 'M2 4h20v14H2zM8 21h8',
@@ -63,21 +88,21 @@ function identify(hostname, address) {
 			result.key = rules[i][1]; result.type = rules[i][2]; result.source = 'hostname'; break;
 		}
 	}
-	if (!result.key && valid && !result.localMac) {
-		if (!prefixes) {
-			prefixes = new Map();
-			Object.keys(catalog.prefixes).forEach(function(key) {
-				var decoded = atob(catalog.prefixes[key]);
-				for (var offset = 0; offset + 2 < decoded.length; offset += 3)
-					prefixes.set((decoded.charCodeAt(offset) << 16) | (decoded.charCodeAt(offset + 1) << 8) | decoded.charCodeAt(offset + 2), key);
-			});
+	if (valid && result.localMac && mac.slice(0, 6) === '525400') {
+		result.key = 'qemu'; result.type = 'computer'; result.source = 'virtual';
+	}
+	if (valid && !result.localMac) {
+		var organization = registryMatch(mac);
+		if (organization) {
+			result.name = organization;
+			result.key = Object.prototype.hasOwnProperty.call(catalog.organizations, organization) ? catalog.organizations[organization] : null;
+			result.source = 'mac';
 		}
-		var key = prefixes.get(parseInt(mac.slice(0, 6), 16));
-		if (key) { result.key = key; result.source = 'mac'; }
 	}
 	var brand = catalog.brands[result.key];
 	if (brand) {
-		result.name = brand.name;
+		result.name = result.name || brand.name;
+		result.brand = brand.name || null;
 		result.type = result.type || brand.type || null;
 		if (!brand.name) result.key = null;
 	}
@@ -85,16 +110,17 @@ function identify(hostname, address) {
 }
 
 function avatar(identity, large, label) {
-	var brand = catalog.brands[identity.key], svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+	var brand = catalog.brands[identity.key], paths = brand && icons.paths[brand.icon];
+	var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 	var node = E('span', { 'class': 'uf-client-avatar' + (brand ? ' uf-brand-avatar' : '') + (large ? ' large' : ''),
 		'title': label, 'aria-hidden': 'true', 'data-brand': identity.key || '' });
 	if (brand && brand.color) node.style.color = brand.color;
-	if (brand && brand.letter) node.appendChild(E('b', {}, brand.letter));
+	if (brand && !paths) node.appendChild(E('b', {}, brand.letter || (brand.name || identity.name || '?').charAt(0)));
 	else {
 		svg.setAttribute('viewBox', '0 0 24 24');
 		if (!brand) { svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', '1.4'); }
 		else svg.setAttribute('fill', 'currentColor');
-		(brand ? brand.paths : [glyphs[identity.type] || glyphs.computer]).forEach(function(path) {
+		(paths || [glyphs[identity.type] || glyphs.computer]).forEach(function(path) {
 			var p = document.createElementNS(svg.namespaceURI, 'path'); p.setAttribute('d', path); svg.appendChild(p);
 		});
 		node.appendChild(svg);

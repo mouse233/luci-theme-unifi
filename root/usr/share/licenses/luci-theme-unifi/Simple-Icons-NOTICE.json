@@ -1,0 +1,1762 @@
+{
+  "version": "16.37.0",
+  "disclaimer": "Simple-Icons-DISCLAIMER.md",
+  "icons": {
+    "3m": {
+      "provider": "simple-icons",
+      "slug": "3m",
+      "title": "3M",
+      "source": "https://www.3m.com",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": null
+    },
+    "abb": {
+      "provider": "simple-icons",
+      "slug": "abb",
+      "title": "ABB",
+      "source": "https://global.abb",
+      "license": null,
+      "hex": "FF000F",
+      "guidelines": null
+    },
+    "acer": {
+      "provider": "simple-icons",
+      "slug": "acer",
+      "title": "Acer",
+      "source": "https://www.acer.com",
+      "license": null,
+      "hex": "83B81A",
+      "guidelines": null
+    },
+    "adafruit": {
+      "provider": "simple-icons",
+      "slug": "adafruit",
+      "title": "Adafruit",
+      "source": "https://www.adafruit.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "adidas": {
+      "provider": "simple-icons",
+      "slug": "adidas",
+      "title": "Adidas",
+      "source": "https://www.adidas.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "agora": {
+      "provider": "simple-icons",
+      "slug": "agora",
+      "title": "Agora",
+      "source": "https://github.com/AgoraIO/Docs-Source/blob/849872dd0496bada0a2dceecb3f79663e3b2d323/assets/images/others/agora-logo.svg",
+      "license": null,
+      "hex": "099DFD",
+      "guidelines": "https://www.agora.io/en/terms-of-service/"
+    },
+    "amd": {
+      "provider": "simple-icons",
+      "slug": "amd",
+      "title": "AMD",
+      "source": "https://www.amd.com",
+      "license": null,
+      "hex": "ED1C24",
+      "guidelines": null
+    },
+    "apple": {
+      "provider": "simple-icons",
+      "slug": "apple",
+      "title": "Apple",
+      "source": "https://www.apple.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "arduino": {
+      "provider": "simple-icons",
+      "slug": "arduino",
+      "title": "Arduino",
+      "source": "https://www.arduino.cc",
+      "license": null,
+      "hex": "00878F",
+      "guidelines": "https://www.arduino.cc/en/trademark"
+    },
+    "arm": {
+      "provider": "simple-icons",
+      "slug": "arm",
+      "title": "Arm",
+      "source": "https://www.arm.com",
+      "license": null,
+      "hex": "0091BD",
+      "guidelines": "https://www.arm.com/company/policies/trademarks/guidelines-corporate-logo"
+    },
+    "astro": {
+      "provider": "simple-icons",
+      "slug": "astro",
+      "title": "Astro",
+      "source": "https://astro.build/press",
+      "license": null,
+      "hex": "BC52EE",
+      "guidelines": null
+    },
+    "asus": {
+      "provider": "simple-icons",
+      "slug": "asus",
+      "title": "ASUS",
+      "source": "https://www.asus.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "atandt": {
+      "provider": "simple-icons",
+      "slug": "atandt",
+      "title": "AT&T",
+      "source": "https://www.att.com",
+      "license": null,
+      "hex": "009FDB",
+      "guidelines": null
+    },
+    "atari": {
+      "provider": "simple-icons",
+      "slug": "atari",
+      "title": "Atari",
+      "source": "https://atarivcs.com",
+      "license": null,
+      "hex": "E4202E",
+      "guidelines": null
+    },
+    "audi": {
+      "provider": "simple-icons",
+      "slug": "audi",
+      "title": "Audi",
+      "source": "https://www.audi.com/ci/en/intro/basics/rings.html",
+      "license": null,
+      "hex": "BB0A30",
+      "guidelines": "https://www.audi.com/ci/en/intro/basics/rings.html"
+    },
+    "audiotechnica": {
+      "provider": "simple-icons",
+      "slug": "audiotechnica",
+      "title": "Audio-Technica",
+      "source": "https://commons.wikimedia.org/wiki/File:Audio-technica.svg",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "autoit": {
+      "provider": "simple-icons",
+      "slug": "autoit",
+      "title": "AutoIt",
+      "source": "https://www.autoitscript.com",
+      "license": null,
+      "hex": "5D83AC",
+      "guidelines": null
+    },
+    "avm": {
+      "provider": "simple-icons",
+      "slug": "avm",
+      "title": "AVM",
+      "source": "https://en.fritz.com/about-avm/press/press-media",
+      "license": null,
+      "hex": "E2001A",
+      "guidelines": "https://business.avm.de/de/data/allgemeine-nutzungsbedingungen-business-portal"
+    },
+    "bankofamerica": {
+      "provider": "simple-icons",
+      "slug": "bankofamerica",
+      "title": "Bank of America",
+      "source": "https://www.bankofamerica.com",
+      "license": null,
+      "hex": "012169",
+      "guidelines": null
+    },
+    "bitdefender": {
+      "provider": "simple-icons",
+      "slug": "bitdefender",
+      "title": "Bitdefender",
+      "source": "https://brand.bitdefender.com",
+      "license": null,
+      "hex": "ED1C24",
+      "guidelines": null
+    },
+    "blackmagicdesign": {
+      "provider": "simple-icons",
+      "slug": "blackmagicdesign",
+      "title": "Blackmagic Design",
+      "source": "https://www.blackmagicdesign.com",
+      "license": null,
+      "hex": "FFA200",
+      "guidelines": null
+    },
+    "bluesky": {
+      "provider": "simple-icons",
+      "slug": "bluesky",
+      "title": "Bluesky",
+      "source": "https://bsky.social/about/blog/press-faq",
+      "license": null,
+      "hex": "1185FE",
+      "guidelines": "https://bsky.social/about/blog/press-faq"
+    },
+    "bmcsoftware": {
+      "provider": "simple-icons",
+      "slug": "bmcsoftware",
+      "title": "BMC Software",
+      "source": "https://www.bmc.com",
+      "license": null,
+      "hex": "FE5000",
+      "guidelines": null
+    },
+    "bmw": {
+      "provider": "simple-icons",
+      "slug": "bmw",
+      "title": "BMW",
+      "source": "https://bmw.com",
+      "license": null,
+      "hex": "0066B1",
+      "guidelines": null
+    },
+    "boeing": {
+      "provider": "simple-icons",
+      "slug": "boeing",
+      "title": "Boeing",
+      "source": "https://commons.wikimedia.org/wiki/File:Boeing_full_logo.svg",
+      "license": null,
+      "hex": "1D439C",
+      "guidelines": null
+    },
+    "boosty": {
+      "provider": "simple-icons",
+      "slug": "boosty",
+      "title": "Boosty",
+      "source": "https://boosty.to/app/brand",
+      "license": null,
+      "hex": "F15F2C",
+      "guidelines": "https://boosty.to/app/brand"
+    },
+    "bose": {
+      "provider": "simple-icons",
+      "slug": "bose",
+      "title": "Bose",
+      "source": "https://www.bose.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": "https://www.bose.com/legal/terms-of-use"
+    },
+    "broadcom": {
+      "provider": "simple-icons",
+      "slug": "broadcom",
+      "title": "Broadcom",
+      "source": "https://www.broadcom.com/support",
+      "license": {
+        "type": "custom",
+        "url": "https://logorequest.broadcom.com/Home.aspx"
+      },
+      "hex": "E31837",
+      "guidelines": null
+    },
+    "bytedance": {
+      "provider": "simple-icons",
+      "slug": "bytedance",
+      "title": "ByteDance",
+      "source": "https://www.bytedance.com",
+      "license": null,
+      "hex": "3C8CFF",
+      "guidelines": null
+    },
+    "caterpillar": {
+      "provider": "simple-icons",
+      "slug": "caterpillar",
+      "title": "Caterpillar",
+      "source": "https://commons.wikimedia.org/wiki/File:Caterpillar_logo.svg",
+      "license": null,
+      "hex": "FFCD11",
+      "guidelines": null
+    },
+    "cbc": {
+      "provider": "simple-icons",
+      "slug": "cbc",
+      "title": "CBC",
+      "source": "https://www.cbc.ca",
+      "license": null,
+      "hex": "E60505",
+      "guidelines": null
+    },
+    "centos": {
+      "provider": "simple-icons",
+      "slug": "centos",
+      "title": "CentOS",
+      "source": "https://wiki.centos.org/ArtWork/Brand/Logo",
+      "license": null,
+      "hex": "262577",
+      "guidelines": null
+    },
+    "cloudflare": {
+      "provider": "simple-icons",
+      "slug": "cloudflare",
+      "title": "Cloudflare",
+      "source": "https://www.cloudflare.com/logo/",
+      "license": null,
+      "hex": "F38020",
+      "guidelines": "https://www.cloudflare.com/trademark/"
+    },
+    "creativetechnology": {
+      "provider": "simple-icons",
+      "slug": "creativetechnology",
+      "title": "Creative Technology",
+      "source": "https://creative.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "css": {
+      "provider": "simple-icons",
+      "slug": "css",
+      "title": "CSS",
+      "source": "https://github.com/CSS-Next/logo.css/blob/bacc20878227204b283c68a6b935f8279e06b0cd/css.svg",
+      "license": null,
+      "hex": "663399",
+      "guidelines": "https://github.com/CSS-Next/logo.css"
+    },
+    "cts": {
+      "provider": "simple-icons",
+      "slug": "cts",
+      "title": "CTS",
+      "source": "https://commons.wikimedia.org/wiki/File:Logo_Compagnie_des_transports_strasbourgeois.svg",
+      "license": null,
+      "hex": "E53236",
+      "guidelines": null
+    },
+    "dell": {
+      "provider": "simple-icons",
+      "slug": "dell",
+      "title": "Dell",
+      "source": "https://www.dell.com",
+      "license": null,
+      "hex": "007DB8",
+      "guidelines": "https://brand.delltechnologies.com/logos/"
+    },
+    "delta": {
+      "provider": "simple-icons",
+      "slug": "delta",
+      "title": "Delta",
+      "source": "https://news.delta.com/delta-air-lines-logos-brand-guidelines",
+      "license": null,
+      "hex": "003366",
+      "guidelines": null
+    },
+    "deutschetelekom": {
+      "provider": "simple-icons",
+      "slug": "deutschetelekom",
+      "title": "Deutsche Telekom",
+      "source": "https://tmap.t-mobile.com/portals/pro74u7a/EXTBrandPortal",
+      "license": null,
+      "hex": "E20074",
+      "guidelines": "https://tmap.t-mobile.com/portals/pro74u7a/EXTBrandPortal"
+    },
+    "dji": {
+      "provider": "simple-icons",
+      "slug": "dji",
+      "title": "DJI",
+      "source": "https://www.dji.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "dts": {
+      "provider": "simple-icons",
+      "slug": "dts",
+      "title": "DTS",
+      "source": "https://xperi.com/brands/dts/",
+      "license": null,
+      "hex": "F98B2B",
+      "guidelines": "https://xperi.com/terms-conditions/"
+    },
+    "dvc": {
+      "provider": "simple-icons",
+      "slug": "dvc",
+      "title": "DVC",
+      "source": "https://iterative.ai/brand/",
+      "license": null,
+      "hex": "13ADC7",
+      "guidelines": "https://iterative.ai/brand/"
+    },
+    "ebay": {
+      "provider": "simple-icons",
+      "slug": "ebay",
+      "title": "eBay",
+      "source": "https://go.developer.ebay.com/logos",
+      "license": null,
+      "hex": "E53238",
+      "guidelines": null
+    },
+    "eight": {
+      "provider": "simple-icons",
+      "slug": "eight",
+      "title": "Eight",
+      "source": "https://8card.net/en",
+      "license": null,
+      "hex": "0054FF",
+      "guidelines": null
+    },
+    "eightsleep": {
+      "provider": "simple-icons",
+      "slug": "eightsleep",
+      "title": "Eight Sleep",
+      "source": "https://www.eightsleep.com/press/",
+      "license": null,
+      "hex": "262729",
+      "guidelines": null
+    },
+    "elm": {
+      "provider": "simple-icons",
+      "slug": "elm",
+      "title": "Elm",
+      "source": "https://github.com/elm/foundation.elm-lang.org/blob/2d097b317d8af2aaeab49284830260a32d817305/assets/elm_logo.svg",
+      "license": null,
+      "hex": "1293D8",
+      "guidelines": null
+    },
+    "ens": {
+      "provider": "simple-icons",
+      "slug": "ens",
+      "title": "ENS",
+      "source": "https://ens.domains/brand",
+      "license": null,
+      "hex": "0080BC",
+      "guidelines": "https://ens.domains/brand"
+    },
+    "ericsson": {
+      "provider": "simple-icons",
+      "slug": "ericsson",
+      "title": "Ericsson",
+      "source": "https://www.ericsson.com/en/newsroom/media-kits/logo",
+      "license": null,
+      "hex": "0082F0",
+      "guidelines": "https://mediabank.ericsson.net/admin/mb/?h=dbeb87a1bcb16fa379c0020bdf713872"
+    },
+    "espressif": {
+      "provider": "simple-icons",
+      "slug": "espressif",
+      "title": "Espressif",
+      "source": "https://www.espressif.com",
+      "license": null,
+      "hex": "E7352C",
+      "guidelines": null
+    },
+    "f5": {
+      "provider": "simple-icons",
+      "slug": "f5",
+      "title": "F5",
+      "source": "https://www.f5.com/company/news/press-kit",
+      "license": null,
+      "hex": "E4002B",
+      "guidelines": null
+    },
+    "facebook": {
+      "provider": "simple-icons",
+      "slug": "facebook",
+      "title": "Facebook",
+      "source": "https://about.meta.com/brand/resources/facebook/logo",
+      "license": null,
+      "hex": "0866FF",
+      "guidelines": "https://about.meta.com/brand/resources/facebook/logo"
+    },
+    "fairphone": {
+      "provider": "simple-icons",
+      "slug": "fairphone",
+      "title": "Fairphone",
+      "source": "https://www.fairphone.com",
+      "license": null,
+      "hex": "4495D1",
+      "guidelines": null
+    },
+    "firewalla": {
+      "provider": "simple-icons",
+      "slug": "firewalla",
+      "title": "Firewalla",
+      "source": "https://github.com/firewalla/firewalla/blob/97f7463fe07b85b979a8f0738fdf14c1af0249a8/extension/diag/static/firewalla.svg",
+      "license": null,
+      "hex": "C8332D",
+      "guidelines": null
+    },
+    "first": {
+      "provider": "simple-icons",
+      "slug": "first",
+      "title": "FIRST",
+      "source": "https://www.firstinspires.org/brand",
+      "license": null,
+      "hex": "0066B3",
+      "guidelines": "https://www.firstinspires.org/brand"
+    },
+    "fitbit": {
+      "provider": "simple-icons",
+      "slug": "fitbit",
+      "title": "Fitbit",
+      "source": "https://www.fitbit.com/uk/home",
+      "license": null,
+      "hex": "00B0B9",
+      "guidelines": null
+    },
+    "flashforge": {
+      "provider": "simple-icons",
+      "slug": "flashforge",
+      "title": "Flashforge",
+      "source": "https://www.flashforge.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "flux": {
+      "provider": "simple-icons",
+      "slug": "flux",
+      "title": "Flux",
+      "source": "https://github.com/cncf/artwork/blob/c2e619cdf85e8bac090ceca7c0834c5cfedf9426/projects/flux/icon/black/flux-icon-black.svg",
+      "license": {
+        "type": "custom",
+        "url": "https://www.linuxfoundation.org/legal/trademark-usage"
+      },
+      "hex": "5468FF",
+      "guidelines": "https://www.cncf.io/brand-guidelines/"
+    },
+    "ford": {
+      "provider": "simple-icons",
+      "slug": "ford",
+      "title": "Ford",
+      "source": "https://secure.ford.com/brochures/",
+      "license": null,
+      "hex": "00274E",
+      "guidelines": null
+    },
+    "fortinet": {
+      "provider": "simple-icons",
+      "slug": "fortinet",
+      "title": "Fortinet",
+      "source": "https://www.fortinet.com",
+      "license": null,
+      "hex": "EE3124",
+      "guidelines": null
+    },
+    "foxtel": {
+      "provider": "simple-icons",
+      "slug": "foxtel",
+      "title": "Foxtel",
+      "source": "https://www.foxtel.com.au",
+      "license": null,
+      "hex": "EB5205",
+      "guidelines": null
+    },
+    "fresh": {
+      "provider": "simple-icons",
+      "slug": "fresh",
+      "title": "Fresh",
+      "source": "https://github.com/denoland/fresh/blob/7e4a22f7af55192a53d90ec6e6bfeacd213c169d/www/static/logo.svg",
+      "license": null,
+      "hex": "FFDB1E",
+      "guidelines": null
+    },
+    "fujifilm": {
+      "provider": "simple-icons",
+      "slug": "fujifilm",
+      "title": "Fujifilm",
+      "source": "https://www.fujifilm.com",
+      "license": null,
+      "hex": "FB0020",
+      "guidelines": "https://www.fujifilm.com/us/en/terms"
+    },
+    "fujitsu": {
+      "provider": "simple-icons",
+      "slug": "fujitsu",
+      "title": "Fujitsu",
+      "source": "https://www.fujitsu.com/global/about/brandmanagement/logo/",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": null
+    },
+    "generalelectric": {
+      "provider": "simple-icons",
+      "slug": "generalelectric",
+      "title": "General Electric",
+      "source": "https://www.ge.com/brand/",
+      "license": null,
+      "hex": "0870D8",
+      "guidelines": null
+    },
+    "generalmotors": {
+      "provider": "simple-icons",
+      "slug": "generalmotors",
+      "title": "General Motors",
+      "source": "https://www.gm.com",
+      "license": null,
+      "hex": "0170CE",
+      "guidelines": null
+    },
+    "git": {
+      "provider": "simple-icons",
+      "slug": "git",
+      "title": "Git",
+      "source": "https://git-scm.com/community/logos",
+      "license": {
+        "type": "CC-BY-3.0"
+      },
+      "hex": "F03C2E",
+      "guidelines": null
+    },
+    "gmx": {
+      "provider": "simple-icons",
+      "slug": "gmx",
+      "title": "GMX",
+      "source": "https://www.united-internet.de/en/newsroom/media-center/logos.html",
+      "license": null,
+      "hex": "1C449B",
+      "guidelines": null
+    },
+    "google": {
+      "provider": "simple-icons",
+      "slug": "google",
+      "title": "Google",
+      "source": "https://partnermarketinghub.withgoogle.com",
+      "license": null,
+      "hex": "4285F4",
+      "guidelines": "https://about.google/brand-resource-center/brand-elements/"
+    },
+    "hcl": {
+      "provider": "simple-icons",
+      "slug": "hcl",
+      "title": "HCL",
+      "source": "https://www.hcl.com/brand-guidelines",
+      "license": null,
+      "hex": "006BB6",
+      "guidelines": "https://www.hcl.com/brand-guidelines"
+    },
+    "hitachi": {
+      "provider": "simple-icons",
+      "slug": "hitachi",
+      "title": "Hitachi",
+      "source": "https://commons.wikimedia.org/wiki/File:Hitachi_inspire_the_next-Logo.svg",
+      "license": null,
+      "hex": "E60027",
+      "guidelines": null
+    },
+    "hive": {
+      "provider": "simple-icons",
+      "slug": "hive",
+      "title": "Hive",
+      "source": "https://www.hivehome.com",
+      "license": null,
+      "hex": "FF7A00",
+      "guidelines": null
+    },
+    "honor": {
+      "provider": "simple-icons",
+      "slug": "honor",
+      "title": "Honor",
+      "source": "https://www.hihonor.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": "https://www.hihonor.com/global/brand-guideline11/basics/logo"
+    },
+    "hp": {
+      "provider": "simple-icons",
+      "slug": "hp",
+      "title": "HP",
+      "source": "https://brandcentral.hp.com/us/en/elements/hp-logo.html",
+      "license": null,
+      "hex": "0096D6",
+      "guidelines": "https://brandcentral.hp.com/us/en/elements/hp-logo.html"
+    },
+    "htc": {
+      "provider": "simple-icons",
+      "slug": "htc",
+      "title": "HTC",
+      "source": "https://htc.com",
+      "license": null,
+      "hex": "A5CF4C",
+      "guidelines": null
+    },
+    "huawei": {
+      "provider": "simple-icons",
+      "slug": "huawei",
+      "title": "Huawei",
+      "source": "https://e.huawei.com/ph/material/partner/0a72728b864949c48b22106454352483",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": "https://e.huawei.com/ph/material/partner/0a72728b864949c48b22106454352483"
+    },
+    "husqvarna": {
+      "provider": "simple-icons",
+      "slug": "husqvarna",
+      "title": "Husqvarna",
+      "source": "https://www.husqvarna.com",
+      "license": null,
+      "hex": "273A60",
+      "guidelines": null
+    },
+    "intel": {
+      "provider": "simple-icons",
+      "slug": "intel",
+      "title": "Intel",
+      "source": "https://www.intel.com/content/www/us/en/newsroom/resources/press-kits-intel-overview.html",
+      "license": null,
+      "hex": "0071C5",
+      "guidelines": null
+    },
+    "intercom": {
+      "provider": "simple-icons",
+      "slug": "intercom",
+      "title": "Intercom",
+      "source": "https://www.intercom.com/press",
+      "license": null,
+      "hex": "6AFDEF",
+      "guidelines": "https://www.intercom.com/press"
+    },
+    "ionos": {
+      "provider": "simple-icons",
+      "slug": "ionos",
+      "title": "Ionos",
+      "source": "https://www.ionos.de",
+      "license": null,
+      "hex": "003D8F",
+      "guidelines": null
+    },
+    "iota": {
+      "provider": "simple-icons",
+      "slug": "iota",
+      "title": "IOTA",
+      "source": "https://www.iota.org/connect/brand",
+      "license": {
+        "type": "CC-BY-SA-4.0"
+      },
+      "hex": "131F37",
+      "guidelines": "https://www.iota.org/connect/brand"
+    },
+    "irobot": {
+      "provider": "simple-icons",
+      "slug": "irobot",
+      "title": "iRobot",
+      "source": "https://www.irobot.com",
+      "license": null,
+      "hex": "6CB86A",
+      "guidelines": null
+    },
+    "jbl": {
+      "provider": "simple-icons",
+      "slug": "jbl",
+      "title": "JBL",
+      "source": "https://www.jbl.com",
+      "license": null,
+      "hex": "FF3300",
+      "guidelines": null
+    },
+    "junipernetworks": {
+      "provider": "simple-icons",
+      "slug": "junipernetworks",
+      "title": "Juniper Networks",
+      "source": "https://www.juniper.net/us/en/company/press-center/images/image-library/logos/",
+      "license": null,
+      "hex": "84B135",
+      "guidelines": "https://www.juniper.net/us/en/company/press-center/images/image-library/logos/"
+    },
+    "kakao": {
+      "provider": "simple-icons",
+      "slug": "kakao",
+      "title": "Kakao",
+      "source": "https://www.kakaocorp.com/kakao/introduce/ci",
+      "license": null,
+      "hex": "FFCD00",
+      "guidelines": null
+    },
+    "kde": {
+      "provider": "simple-icons",
+      "slug": "kde",
+      "title": "KDE",
+      "source": "https://kde.org/stuff/clipart",
+      "license": null,
+      "hex": "1D99F3",
+      "guidelines": "https://kde.org/stuff/clipart"
+    },
+    "keenetic": {
+      "provider": "simple-icons",
+      "slug": "keenetic",
+      "title": "Keenetic",
+      "source": "https://keenetic.com",
+      "license": null,
+      "hex": "009EE2",
+      "guidelines": "https://keenetic.com/en/legal"
+    },
+    "kingstontechnology": {
+      "provider": "simple-icons",
+      "slug": "kingstontechnology",
+      "title": "Kingston Technology",
+      "source": "https://www.kingston.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "konami": {
+      "provider": "simple-icons",
+      "slug": "konami",
+      "title": "Konami",
+      "source": "https://commons.wikimedia.org/wiki/File:Konami_4th_logo_2.svg",
+      "license": null,
+      "hex": "B60014",
+      "guidelines": null
+    },
+    "kyocera": {
+      "provider": "simple-icons",
+      "slug": "kyocera",
+      "title": "Kyocera",
+      "source": "https://uk.kyocera.com",
+      "license": null,
+      "hex": "DF0522",
+      "guidelines": null
+    },
+    "lenovo": {
+      "provider": "simple-icons",
+      "slug": "lenovo",
+      "title": "Lenovo",
+      "source": "https://news.lenovo.com/press-kits/",
+      "license": null,
+      "hex": "E2231A",
+      "guidelines": null
+    },
+    "lg": {
+      "provider": "simple-icons",
+      "slug": "lg",
+      "title": "LG",
+      "source": "https://www.lg.com/global/our-brand/brand-expression/elements/logo/index.jsp",
+      "license": null,
+      "hex": "A50034",
+      "guidelines": "https://www.lg.com/global/our-brand/brand-expression/elements/logo/index.jsp"
+    },
+    "linear": {
+      "provider": "simple-icons",
+      "slug": "linear",
+      "title": "Linear",
+      "source": "https://linear.app",
+      "license": null,
+      "hex": "5E6AD2",
+      "guidelines": null
+    },
+    "logmein": {
+      "provider": "simple-icons",
+      "slug": "logmein",
+      "title": "LogMeIn",
+      "source": "https://www.logmein.com/legal/trademark",
+      "license": null,
+      "hex": "45B6F2",
+      "guidelines": "https://www.logmein.com/legal/trademark"
+    },
+    "matrix": {
+      "provider": "simple-icons",
+      "slug": "matrix",
+      "title": "Matrix",
+      "source": "https://matrix.org",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "max": {
+      "provider": "simple-icons",
+      "slug": "max",
+      "title": "Max",
+      "source": "https://cycling74.com",
+      "license": null,
+      "hex": "525252",
+      "guidelines": null
+    },
+    "mcafee": {
+      "provider": "simple-icons",
+      "slug": "mcafee",
+      "title": "McAfee",
+      "source": "https://www.mcafee.com/enterprise/en-us/about/newsroom/product-images.html",
+      "license": null,
+      "hex": "C01818",
+      "guidelines": null
+    },
+    "mcdonalds": {
+      "provider": "simple-icons",
+      "slug": "mcdonalds",
+      "title": "McDonald's",
+      "source": "https://www.mcdonalds.com/gb/en-gb/newsroom.html",
+      "license": null,
+      "hex": "FBC817",
+      "guidelines": null
+    },
+    "mediafire": {
+      "provider": "simple-icons",
+      "slug": "mediafire",
+      "title": "MediaFire",
+      "source": "https://www.mediafire.com/developers/brand_assets/mediafire_brand_assets/",
+      "license": null,
+      "hex": "1299F3",
+      "guidelines": "https://www.mediafire.com/developers/brand_assets/mediafire_brand_assets/"
+    },
+    "mediatek": {
+      "provider": "simple-icons",
+      "slug": "mediatek",
+      "title": "MediaTek",
+      "source": "https://corp.mediatek.com/news-events/press-library",
+      "license": null,
+      "hex": "EC9430",
+      "guidelines": null
+    },
+    "metro": {
+      "provider": "simple-icons",
+      "slug": "metro",
+      "title": "Metro",
+      "source": "https://facebook.github.io/metro/",
+      "license": null,
+      "hex": "EF4242",
+      "guidelines": null
+    },
+    "mg": {
+      "provider": "simple-icons",
+      "slug": "mg",
+      "title": "MG",
+      "source": "https://www.mg.co.uk/themes/custom/mg/assets/images/svg/mg-logo-desktop.svg",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": "https://www.mg.co.uk/terms-and-conditions"
+    },
+    "mihoyo": {
+      "provider": "simple-icons",
+      "slug": "mihoyo",
+      "title": "miHoYo",
+      "source": "https://en.wikipedia.org/wiki/File:MiHoYo.svg",
+      "license": null,
+      "hex": "4EA4DD",
+      "guidelines": null
+    },
+    "minds": {
+      "provider": "simple-icons",
+      "slug": "minds",
+      "title": "Minds",
+      "source": "https://www.minds.com/branding",
+      "license": {
+        "type": "CC-BY-SA-4.0"
+      },
+      "hex": "FED12F",
+      "guidelines": null
+    },
+    "minimax": {
+      "provider": "simple-icons",
+      "slug": "minimax",
+      "title": "MiniMax",
+      "source": "https://github.com/MiniMax-AI/MiniMax-01/blob/57cf223b177e99636c7711a0f179e9fdc9c38e8a/figures/minimax.svg",
+      "license": {
+        "type": "custom",
+        "url": "https://github.com/simple-icons/simple-icons/pull/13982#issuecomment-3531627803"
+      },
+      "hex": "E73562",
+      "guidelines": null
+    },
+    "motorola": {
+      "provider": "simple-icons",
+      "slug": "motorola",
+      "title": "Motorola",
+      "source": "https://motorola-global-portal-de.custhelp.com",
+      "license": null,
+      "hex": "E1140A",
+      "guidelines": null
+    },
+    "msi": {
+      "provider": "simple-icons",
+      "slug": "msi",
+      "title": "MSI",
+      "source": "https://www.msi.com/page/brochure",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": null
+    },
+    "mta": {
+      "provider": "simple-icons",
+      "slug": "mta",
+      "title": "MTA",
+      "source": "https://mta.info",
+      "license": null,
+      "hex": "0039A6",
+      "guidelines": null
+    },
+    "myspace": {
+      "provider": "simple-icons",
+      "slug": "myspace",
+      "title": "Myspace",
+      "source": "https://myspace.com",
+      "license": null,
+      "hex": "030303",
+      "guidelines": null
+    },
+    "naver": {
+      "provider": "simple-icons",
+      "slug": "naver",
+      "title": "Naver",
+      "source": "https://developers.naver.com/docs/login/bi/bi.md",
+      "license": null,
+      "hex": "03C75A",
+      "guidelines": "https://developers.naver.com/docs/login/bi/bi.md"
+    },
+    "ndr": {
+      "provider": "simple-icons",
+      "slug": "ndr",
+      "title": "NDR",
+      "source": "https://www.ndr.de",
+      "license": null,
+      "hex": "0C1754",
+      "guidelines": null
+    },
+    "nebula": {
+      "provider": "simple-icons",
+      "slug": "nebula",
+      "title": "Nebula",
+      "source": "https://nebula.tv",
+      "license": null,
+      "hex": "2CADFE",
+      "guidelines": null
+    },
+    "nec": {
+      "provider": "simple-icons",
+      "slug": "nec",
+      "title": "NEC",
+      "source": "https://commons.wikimedia.org/wiki/File:NEC_logo.svg",
+      "license": null,
+      "hex": "1414A0",
+      "guidelines": null
+    },
+    "neon": {
+      "provider": "simple-icons",
+      "slug": "neon",
+      "title": "Neon",
+      "source": "https://neon.com/brand",
+      "license": null,
+      "hex": "34D59A",
+      "guidelines": "https://neon.com/brand"
+    },
+    "netapp": {
+      "provider": "simple-icons",
+      "slug": "netapp",
+      "title": "NetApp",
+      "source": "https://www.netapp.com",
+      "license": null,
+      "hex": "0067C5",
+      "guidelines": "https://www.netapp.com/company/legal/trademark-guidelines/"
+    },
+    "netflix": {
+      "provider": "simple-icons",
+      "slug": "netflix",
+      "title": "Netflix",
+      "source": "https://brand.netflix.com/en/assets/logos",
+      "license": null,
+      "hex": "E50914",
+      "guidelines": "https://brand.netflix.com/en/assets/logos"
+    },
+    "netgear": {
+      "provider": "simple-icons",
+      "slug": "netgear",
+      "title": "NETGEAR",
+      "source": "https://www.powershift.netgear.de/images/powershift/collateral/logos-visio-icons/brandguideline_partner_2018.pdf",
+      "license": null,
+      "hex": "2C262D",
+      "guidelines": "https://www.netgear.com/about/trademarks"
+    },
+    "nike": {
+      "provider": "simple-icons",
+      "slug": "nike",
+      "title": "Nike",
+      "source": "https://www.nike.com",
+      "license": null,
+      "hex": "111111",
+      "guidelines": null
+    },
+    "nikon": {
+      "provider": "simple-icons",
+      "slug": "nikon",
+      "title": "Nikon",
+      "source": "https://www.nikon.com",
+      "license": null,
+      "hex": "FFE100",
+      "guidelines": "https://www.nikon.com/usage/group-info"
+    },
+    "nokia": {
+      "provider": "simple-icons",
+      "slug": "nokia",
+      "title": "Nokia",
+      "source": "https://www.nokia.com",
+      "license": null,
+      "hex": "005AFF",
+      "guidelines": null
+    },
+    "norco": {
+      "provider": "simple-icons",
+      "slug": "norco",
+      "title": "Norco",
+      "source": "https://www.norco.com",
+      "license": null,
+      "hex": "00FF00",
+      "guidelines": null
+    },
+    "nordicsemiconductor": {
+      "provider": "simple-icons",
+      "slug": "nordicsemiconductor",
+      "title": "Nordic Semiconductor",
+      "source": "https://www.nordicsemi.com",
+      "license": null,
+      "hex": "00A9CE",
+      "guidelines": null
+    },
+    "nutanix": {
+      "provider": "simple-icons",
+      "slug": "nutanix",
+      "title": "Nutanix",
+      "source": "https://www.nutanix.com/content/dam/nutanix/en/cmn/documents/nutanix-brandbook.pdf",
+      "license": null,
+      "hex": "024DA1",
+      "guidelines": null
+    },
+    "nvidia": {
+      "provider": "simple-icons",
+      "slug": "nvidia",
+      "title": "NVIDIA",
+      "source": "https://www.nvidia.com/en-us",
+      "license": null,
+      "hex": "76B900",
+      "guidelines": null
+    },
+    "nzxt": {
+      "provider": "simple-icons",
+      "slug": "nzxt",
+      "title": "NZXT",
+      "source": "https://nzxt.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": "https://nzxt.com/about/brand-guidelines"
+    },
+    "oneplus": {
+      "provider": "simple-icons",
+      "slug": "oneplus",
+      "title": "OnePlus",
+      "source": "https://www.oneplus.com/ca_en/brand/asset",
+      "license": null,
+      "hex": "F5010C",
+      "guidelines": null
+    },
+    "opentext": {
+      "provider": "simple-icons",
+      "slug": "opentext",
+      "title": "OpenText",
+      "source": "https://www.opentext.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "openwrt": {
+      "provider": "simple-icons",
+      "slug": "openwrt",
+      "title": "OpenWrt",
+      "source": "https://openwrt.org/docs/guide-graphic-designer/openwrt-logo",
+      "license": null,
+      "hex": "00B5E2",
+      "guidelines": "https://openwrt.org/docs/guide-graphic-designer/openwrt-logo"
+    },
+    "oppo": {
+      "provider": "simple-icons",
+      "slug": "oppo",
+      "title": "OPPO",
+      "source": "https://www.figma.com/community/file/832815970641696814/OPPO-Media-Kit",
+      "license": null,
+      "hex": "2D683D",
+      "guidelines": "https://www.oppo.com/en/terms/"
+    },
+    "origin": {
+      "provider": "simple-icons",
+      "slug": "origin",
+      "title": "Origin",
+      "source": "https://www.origin.com/gbr/en-us/store",
+      "license": null,
+      "hex": "F56C2D",
+      "guidelines": null
+    },
+    "oshkosh": {
+      "provider": "simple-icons",
+      "slug": "oshkosh",
+      "title": "Oshkosh",
+      "source": "https://oshkoshdefense.com/media/photos/",
+      "license": {
+        "type": "CC-BY-SA-4.0"
+      },
+      "hex": "E6830F",
+      "guidelines": null
+    },
+    "outline": {
+      "provider": "simple-icons",
+      "slug": "outline",
+      "title": "Outline",
+      "source": "https://www.getoutline.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "ovh": {
+      "provider": "simple-icons",
+      "slug": "ovh",
+      "title": "OVH",
+      "source": "https://www.ovh.com/ca/en/newsroom/",
+      "license": null,
+      "hex": "123F6D",
+      "guidelines": null
+    },
+    "paloaltonetworks": {
+      "provider": "simple-icons",
+      "slug": "paloaltonetworks",
+      "title": "Palo Alto Networks",
+      "source": "https://www.paloaltonetworks.com",
+      "license": null,
+      "hex": "F04E23",
+      "guidelines": "https://www.paloaltonetworks.com/company/brand"
+    },
+    "panasonic": {
+      "provider": "simple-icons",
+      "slug": "panasonic",
+      "title": "Panasonic",
+      "source": "https://www.panasonic.com",
+      "license": null,
+      "hex": "0049AB",
+      "guidelines": "https://holdings.panasonic/global/terms-of-use.html"
+    },
+    "pangolin": {
+      "provider": "simple-icons",
+      "slug": "pangolin",
+      "title": "Pangolin",
+      "source": "https://github.com/fosrl/pangolin/blob/b4c01349d19c65c60b189c735a3e3f7e9ab8f9f0/public/logo/pangolin_orange.svg",
+      "license": null,
+      "hex": "F36118",
+      "guidelines": null
+    },
+    "paypal": {
+      "provider": "simple-icons",
+      "slug": "paypal",
+      "title": "PayPal",
+      "source": "https://www.paypal.com/us",
+      "license": null,
+      "hex": "002991",
+      "guidelines": "https://newsroom.paypal-corp.com/media-resources"
+    },
+    "philipshue": {
+      "provider": "simple-icons",
+      "slug": "philipshue",
+      "title": "Philips Hue",
+      "source": "https://www.philips-hue.com/en-us/support/faq",
+      "license": null,
+      "hex": "0065D3",
+      "guidelines": null
+    },
+    "playstation": {
+      "provider": "simple-icons",
+      "slug": "playstation",
+      "title": "PlayStation",
+      "source": "https://www.playstation.com/en-us/",
+      "license": null,
+      "hex": "0070D1",
+      "guidelines": null
+    },
+    "polestar": {
+      "provider": "simple-icons",
+      "slug": "polestar",
+      "title": "Polestar",
+      "source": "https://commons.wikimedia.org/wiki/File:Polestar_logo_2020.svg",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "poly": {
+      "provider": "simple-icons",
+      "slug": "poly",
+      "title": "Poly",
+      "source": "https://www.poly.com",
+      "license": null,
+      "hex": "EB3C00",
+      "guidelines": null
+    },
+    "proxmox": {
+      "provider": "simple-icons",
+      "slug": "proxmox",
+      "title": "Proxmox",
+      "source": "https://www.proxmox.com/en/news/media-kit",
+      "license": null,
+      "hex": "E57000",
+      "guidelines": "https://www.proxmox.com/en/news/media-kit"
+    },
+    "qemu": {
+      "provider": "simple-icons",
+      "slug": "qemu",
+      "title": "QEMU",
+      "source": "https://wiki.qemu.org/Logo",
+      "license": null,
+      "hex": "FF6600",
+      "guidelines": null
+    },
+    "qualcomm": {
+      "provider": "simple-icons",
+      "slug": "qualcomm",
+      "title": "Qualcomm",
+      "source": "https://www.qualcomm.com",
+      "license": null,
+      "hex": "3253DC",
+      "guidelines": null
+    },
+    "radar": {
+      "provider": "simple-icons",
+      "slug": "radar",
+      "title": "Radar",
+      "source": "https://radar.io",
+      "license": null,
+      "hex": "007AFF",
+      "guidelines": null
+    },
+    "raspberrypi": {
+      "provider": "simple-icons",
+      "slug": "raspberrypi",
+      "title": "Raspberry Pi",
+      "source": "https://www.raspberrypi.org/trademark-rules",
+      "license": null,
+      "hex": "A22846",
+      "guidelines": "https://www.raspberrypi.org/trademark-rules"
+    },
+    "ray": {
+      "provider": "simple-icons",
+      "slug": "ray",
+      "title": "Ray",
+      "source": "https://github.com/ray-project/ray/blob/6522935291caa120e83697c6c9b3a450617c9283/dashboard/client/src/logo.svg",
+      "license": null,
+      "hex": "028CF0",
+      "guidelines": null
+    },
+    "razer": {
+      "provider": "simple-icons",
+      "slug": "razer",
+      "title": "Razer",
+      "source": "https://press.razer.com",
+      "license": null,
+      "hex": "00FF00",
+      "guidelines": null
+    },
+    "relay": {
+      "provider": "simple-icons",
+      "slug": "relay",
+      "title": "Relay",
+      "source": "https://relay.dev",
+      "license": null,
+      "hex": "F26B00",
+      "guidelines": null
+    },
+    "ring": {
+      "provider": "simple-icons",
+      "slug": "ring",
+      "title": "Ring",
+      "source": "https://store.ring.com/press",
+      "license": null,
+      "hex": "1C9AD6",
+      "guidelines": null
+    },
+    "rockwellautomation": {
+      "provider": "simple-icons",
+      "slug": "rockwellautomation",
+      "title": "Rockwell Automation",
+      "source": "https://www.rockwellautomation.com/en-ie/company/news.html",
+      "license": null,
+      "hex": "CD163F",
+      "guidelines": null
+    },
+    "roku": {
+      "provider": "simple-icons",
+      "slug": "roku",
+      "title": "Roku",
+      "source": "https://www.roku.com",
+      "license": null,
+      "hex": "662D91",
+      "guidelines": "https://docs.roku.com/published/trademarkguidelines/en/ca"
+    },
+    "rollsroyce": {
+      "provider": "simple-icons",
+      "slug": "rollsroyce",
+      "title": "Rolls-Royce",
+      "source": "https://www.rolls-roycemotorcars.com",
+      "license": null,
+      "hex": "281432",
+      "guidelines": null
+    },
+    "root": {
+      "provider": "simple-icons",
+      "slug": "root",
+      "title": "ROOT",
+      "source": "https://root.cern/assets/images/logos/svg/ROOT.svg",
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "hex": "1ED3E4",
+      "guidelines": null
+    },
+    "sage": {
+      "provider": "simple-icons",
+      "slug": "sage",
+      "title": "Sage",
+      "source": "https://www.sage.com",
+      "license": null,
+      "hex": "00D639",
+      "guidelines": null
+    },
+    "samsung": {
+      "provider": "simple-icons",
+      "slug": "samsung",
+      "title": "Samsung",
+      "source": "https://www.samsung.com/us/about-us/brand-identity/logo/",
+      "license": null,
+      "hex": "1428A0",
+      "guidelines": "https://www.samsung.com/us/about-us/brand-identity/logo/"
+    },
+    "scalar": {
+      "provider": "simple-icons",
+      "slug": "scalar",
+      "title": "Scalar",
+      "source": "https://scalar.com",
+      "license": null,
+      "hex": "1A1A1A",
+      "guidelines": null
+    },
+    "schneiderelectric": {
+      "provider": "simple-icons",
+      "slug": "schneiderelectric",
+      "title": "Schneider Electric",
+      "source": "https://www.se.com/us/en/assets/739/media/202250/SE_logo-LIO-white_header.svg",
+      "license": null,
+      "hex": "3DCD58",
+      "guidelines": null
+    },
+    "sentry": {
+      "provider": "simple-icons",
+      "slug": "sentry",
+      "title": "Sentry",
+      "source": "https://sentry.io/branding/",
+      "license": null,
+      "hex": "362D59",
+      "guidelines": null
+    },
+    "sharp": {
+      "provider": "simple-icons",
+      "slug": "sharp",
+      "title": "sharp",
+      "source": "https://github.com/lovell/sharp/blob/315f519e1dd9adca0678e94a5ed0492cb5e0aae4/docs/image/sharp-logo-mono.svg",
+      "license": null,
+      "hex": "99CC00",
+      "guidelines": null
+    },
+    "siemens": {
+      "provider": "simple-icons",
+      "slug": "siemens",
+      "title": "Siemens",
+      "source": "https://siemens.com",
+      "license": null,
+      "hex": "009999",
+      "guidelines": null
+    },
+    "sifive": {
+      "provider": "simple-icons",
+      "slug": "sifive",
+      "title": "SiFive",
+      "source": "https://www.sifive.com",
+      "license": null,
+      "hex": "252323",
+      "guidelines": "https://www.sifive.com/terms"
+    },
+    "smartthings": {
+      "provider": "simple-icons",
+      "slug": "smartthings",
+      "title": "SmartThings",
+      "source": "https://www.smartthings.com/press-kit",
+      "license": null,
+      "hex": "15BFFF",
+      "guidelines": "https://www.smartthings.com/press-kit"
+    },
+    "sonicwall": {
+      "provider": "simple-icons",
+      "slug": "sonicwall",
+      "title": "SonicWall",
+      "source": "https://brandfolder.com/sonicwall/sonicwall-external",
+      "license": null,
+      "hex": "FF791A",
+      "guidelines": null
+    },
+    "sonos": {
+      "provider": "simple-icons",
+      "slug": "sonos",
+      "title": "Sonos",
+      "source": "https://www.sonos.com/en-gb/home",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "sony": {
+      "provider": "simple-icons",
+      "slug": "sony",
+      "title": "Sony",
+      "source": "https://www.sony.com",
+      "license": null,
+      "hex": "FFFFFF",
+      "guidelines": null
+    },
+    "square": {
+      "provider": "simple-icons",
+      "slug": "square",
+      "title": "Square",
+      "source": "https://squareup.com",
+      "license": null,
+      "hex": "3E4348",
+      "guidelines": null
+    },
+    "steelseries": {
+      "provider": "simple-icons",
+      "slug": "steelseries",
+      "title": "Steelseries",
+      "source": "https://techblog.steelseries.com/ux-guide/index.html",
+      "license": null,
+      "hex": "FF5200",
+      "guidelines": null
+    },
+    "stmicroelectronics": {
+      "provider": "simple-icons",
+      "slug": "stmicroelectronics",
+      "title": "STMicroelectronics",
+      "source": "https://www.st.com",
+      "license": null,
+      "hex": "03234B",
+      "guidelines": null
+    },
+    "stryker": {
+      "provider": "simple-icons",
+      "slug": "stryker",
+      "title": "Stryker",
+      "source": "https://stryker-mutator.io",
+      "license": null,
+      "hex": "E74C3C",
+      "guidelines": null
+    },
+    "symantec": {
+      "provider": "simple-icons",
+      "slug": "symantec",
+      "title": "Symantec",
+      "source": "https://commons.wikimedia.org/wiki/File:Symantec_logo10.svg",
+      "license": null,
+      "hex": "FDB511",
+      "guidelines": null
+    },
+    "synology": {
+      "provider": "simple-icons",
+      "slug": "synology",
+      "title": "Synology",
+      "source": "https://www.synology.com/en-global/company/branding",
+      "license": null,
+      "hex": "B5B5B6",
+      "guidelines": "https://www.synology.com/en-global/company/branding"
+    },
+    "tado": {
+      "provider": "simple-icons",
+      "slug": "tado",
+      "title": "tado°",
+      "source": "https://www.tado.com/gb-en/press-assets",
+      "license": null,
+      "hex": "FFA900",
+      "guidelines": null
+    },
+    "teradata": {
+      "provider": "simple-icons",
+      "slug": "teradata",
+      "title": "Teradata",
+      "source": "https://github.com/Teradata/teradata.github.io/blob/0fb3886aaeefea7bea4951c300f49ac8f9c2476f/src/assets/icons/teradata-icon.svg",
+      "license": null,
+      "hex": "F37440",
+      "guidelines": null
+    },
+    "tesla": {
+      "provider": "simple-icons",
+      "slug": "tesla",
+      "title": "Tesla",
+      "source": "https://www.tesla.com/tesla-gallery",
+      "license": null,
+      "hex": "CC0000",
+      "guidelines": null
+    },
+    "theweatherchannel": {
+      "provider": "simple-icons",
+      "slug": "theweatherchannel",
+      "title": "The Weather Channel",
+      "source": "https://weather.com",
+      "license": null,
+      "hex": "003399",
+      "guidelines": null
+    },
+    "ticketmaster": {
+      "provider": "simple-icons",
+      "slug": "ticketmaster",
+      "title": "Ticketmaster",
+      "source": "https://design.ticketmaster.com/brand/overview/",
+      "license": null,
+      "hex": "026CDF",
+      "guidelines": null
+    },
+    "tide": {
+      "provider": "simple-icons",
+      "slug": "tide",
+      "title": "Tide",
+      "source": "https://www.tide.co/newsroom",
+      "license": null,
+      "hex": "4050FB",
+      "guidelines": null
+    },
+    "tomtom": {
+      "provider": "simple-icons",
+      "slug": "tomtom",
+      "title": "TomTom",
+      "source": "https://brandguide.tomtom.com/design/logo",
+      "license": null,
+      "hex": "DF1B12",
+      "guidelines": "https://brandguide.tomtom.com"
+    },
+    "toshiba": {
+      "provider": "simple-icons",
+      "slug": "toshiba",
+      "title": "Toshiba",
+      "source": "https://commons.wikimedia.org/wiki/File:Toshiba_logo.svg",
+      "license": null,
+      "hex": "FF0000",
+      "guidelines": null
+    },
+    "tplink": {
+      "provider": "simple-icons",
+      "slug": "tplink",
+      "title": "TP-Link",
+      "source": "https://www.tp-link.com",
+      "license": null,
+      "hex": "4ACBD6",
+      "guidelines": null
+    },
+    "trimble": {
+      "provider": "simple-icons",
+      "slug": "trimble",
+      "title": "Trimble",
+      "source": "https://www.trimble.com",
+      "license": null,
+      "hex": "0063A3",
+      "guidelines": "https://brand.trimble.com"
+    },
+    "ubiquiti": {
+      "provider": "simple-icons",
+      "slug": "ubiquiti",
+      "title": "Ubiquiti",
+      "source": "https://www.ui.com",
+      "license": null,
+      "hex": "0559C9",
+      "guidelines": null
+    },
+    "valve": {
+      "provider": "simple-icons",
+      "slug": "valve",
+      "title": "Valve",
+      "source": "https://www.valvesoftware.com",
+      "license": null,
+      "hex": "F74843",
+      "guidelines": null
+    },
+    "verizon": {
+      "provider": "simple-icons",
+      "slug": "verizon",
+      "title": "Verizon",
+      "source": "https://www.verizondigitalmedia.com/about/logo-usage/",
+      "license": null,
+      "hex": "CD040B",
+      "guidelines": null
+    },
+    "vivint": {
+      "provider": "simple-icons",
+      "slug": "vivint",
+      "title": "Vivint",
+      "source": "https://brandfolder.com/portals/vivint",
+      "license": null,
+      "hex": "212721",
+      "guidelines": "https://s.tiled.co/2wH-ED5/branding-guide"
+    },
+    "vivo": {
+      "provider": "simple-icons",
+      "slug": "vivo",
+      "title": "vivo",
+      "source": "https://www.vivo.com",
+      "license": null,
+      "hex": "415FFF",
+      "guidelines": null
+    },
+    "vk": {
+      "provider": "simple-icons",
+      "slug": "vk",
+      "title": "VK",
+      "source": "https://vk.com/brand",
+      "license": null,
+      "hex": "0077FF",
+      "guidelines": "https://vk.com/brand"
+    },
+    "vmware": {
+      "provider": "simple-icons",
+      "slug": "vmware",
+      "title": "VMware",
+      "source": "https://myvmware.workspaceair.com",
+      "license": null,
+      "hex": "607078",
+      "guidelines": null
+    },
+    "wacom": {
+      "provider": "simple-icons",
+      "slug": "wacom",
+      "title": "Wacom",
+      "source": "https://support.wacom.com/hc/en-us",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    },
+    "xiaomi": {
+      "provider": "simple-icons",
+      "slug": "xiaomi",
+      "title": "Xiaomi",
+      "source": "https://www.mi.com/global",
+      "license": null,
+      "hex": "FF6900",
+      "guidelines": null
+    },
+    "yamahacorporation": {
+      "provider": "simple-icons",
+      "slug": "yamahacorporation",
+      "title": "Yamaha Corporation",
+      "source": "https://www.yamaha.com/en/",
+      "license": null,
+      "hex": "4B1E78",
+      "guidelines": null
+    },
+    "yamahamotorcorporation": {
+      "provider": "simple-icons",
+      "slug": "yamahamotorcorporation",
+      "title": "Yamaha Motor Corporation",
+      "source": "https://commons.wikimedia.org/wiki/File:Yamaha_Motor_Logo_(full).svg",
+      "license": null,
+      "hex": "E60012",
+      "guidelines": null
+    },
+    "zebratechnologies": {
+      "provider": "simple-icons",
+      "slug": "zebratechnologies",
+      "title": "Zebra Technologies",
+      "source": "https://www.zebra.com",
+      "license": null,
+      "hex": "000000",
+      "guidelines": null
+    }
+  }
+}

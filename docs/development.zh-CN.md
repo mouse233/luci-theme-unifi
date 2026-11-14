@@ -85,14 +85,32 @@ UCODE_BIN=/path/to/ucode npm run test:browser
 
 ### 更新厂商数据
 
-生成的 `htdocs/luci-static/resources/unifi/brand-data.js` 已纳入版本管理，普通构建及路由器运行无需下载厂商数据。定义位于 `tools/brand-definitions.json`，来源校验和位于 `tools/brand-data-sources.json`。
+`tools/generate_brands.py` 生成三个纳入版本管理、完全离线的 LuCI 模块：
+
+| 模块 | 内容 |
+| --- | --- |
+| `vendor-data.js` | IEEE MA-L、MA-M、MA-S 和旧 IAB 的全部前缀、紧凑排序索引及原始登记名称；名称和编号放在同一快照中 |
+| `brand-map.js` | 已确认的组织匹配和目录唯一精确匹配，用来选择图标；厂商栏不替换成品牌简称 |
+| `icon-data.js` | 经过验证的 SVG 路径文本，不是外部图片链接，也不是 Base64 图片 |
+
+浏览器直接在紧凑字节数组里按 36、28、24 位顺序查找最长匹配，不为所有前缀创建对象。三个模块都记录快照标识。查不到登记信息时才采用主机名推测；约定的 `52:54:00` 前缀作为独立的 QEMU 虚拟网卡提示，其他本地管理地址不参与 IEEE 匹配。搜索支持关联品牌名，表格、详情及 CSV 保留原始登记名称。
 
 ```sh
 python3 tools/generate_brands.py
 python3 tools/generate_brands.py --check
+python3 tools/generate_brands.py --refresh --audit-nmap
+python3 tools/generate_brands.py --refresh --update-icons --audit-nmap
 ```
 
-首次运行会下载源数据至被忽略的 `vendor/brand-data/`。`--check` 仅使用缓存验证，不联网。只有明确更新上游数据时才使用 `--refresh`，并同时审查生成模块、来源记录和许可文件的变化。
+普通生成使用被忽略的 `vendor/brand-data/` 缓存，并验证 `tools/brand-data-sources.json` 中的 SHA-256；缺失的输入会下载。`--check` 不联网。只有 `--refresh` 才接受上游变化。加上 `--update-icons` 会选择 Simple Icons 最新稳定版，通过验证后更新 `tools/brand-data-config.json`。Nmap 和 OUI-Master-Database 均不参与运行时登记数据合并。
+
+已确认映射位于 `tools/brand-definitions.json`。生成器读取固定版本的 Simple Icons 元数据和 selfh.st 目录：已确认的正则优先；只有 Simple Icons 名称或其声明别名的唯一规范化精确匹配能自动建立图标映射。部分名称匹配及歧义只进入候选报告，不更改原始厂商名称。候选搜索排除 Technology、Systems 等通用公司词。selfh.st 用于提供补充候选；当前仅支持路径的渲染器只自动嵌入 Simple Icons。采用候选时，在定义中增加经过核对的组织匹配和可用的 Simple Icons 标识，再重新生成。
+
+`artifacts/brand-data/` 保存完整候选 JSON、前 200 个候选组织的 HTML 图标预览、不可用的已配置图标、注册表冲突、可选的 Nmap 差异和更新摘要。打开 HTML 预览会访问列出的上游图片源，这些预览链接不会安装到路由器。Nmap 名称差异常为缩写差异，不直接视为登记冲突。IEEE 同一注册表的重复前缀取最后一条，同一前缀跨 MA-S/IAB 时优先 MA-S，冲突均写入报告。生成器验证 CSV 行、输入最低规模和超过 5% 的缩减，防止下载不完整时替换快照；核实后的缩减可使用 `--allow-shrink`。
+
+`Update vendor and icon data` Workflow 每月 2 日北京时间 11:23 运行，也支持手动触发。流程刷新数据、生成图标候选和 Nmap 报告、检查可复现性、运行单元/打包及客户端浏览器测试，再创建或更新 `automation/update-brand-data` 分支的 PR，不自动合并，也不更新已部署的路由器。报告保留 30 天。仓库需要允许 Actions 创建 PR；若需要生成的 PR 触发其他 Workflow，可配置可选的 `BRAND_DATA_TOKEN`，否则使用 `GITHUB_TOKEN` 并在创建 PR 前完成流程内的检查。
+
+`tools/brand-data-summary.json` 记录生成文件校验和及覆盖统计。每个已收录图标的来源和可用的许可信息、图标库许可和免责声明打包在 `root/usr/share/licenses/luci-theme-unifi/`。没有可用 Logo 的厂商仍完整显示原始名称并支持搜索，使用通用图标。
 
 ### 目录与发布边界
 

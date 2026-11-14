@@ -1,0 +1,43 @@
+{
+  "brands": 201,
+  "mapped_organizations": 358,
+  "organizations": 34050,
+  "outputs": {
+    "htdocs/luci-static/resources/unifi/brand-map.js": {
+      "bytes": 25333,
+      "sha256": "ca15dbce273dda29c25ad0100a0237c8916ac6e0f2be24b8f3b2118b2c26e9ce"
+    },
+    "htdocs/luci-static/resources/unifi/icon-data.js": {
+      "bytes": 238509,
+      "sha256": "f697a03301e9d97300da60bd6baa8c1790e74c5c4d6bebed108901f31c21bee4"
+    },
+    "htdocs/luci-static/resources/unifi/vendor-data.js": {
+      "bytes": 1296577,
+      "sha256": "d938bbac08e7fe1c90357e58b6c45d0996003749d5036ebfe28db1aa9c0596f4"
+    }
+  },
+  "pending_icon_matches": 1012,
+  "prefixes": 59041,
+  "registries": {
+    "IAB": {
+      "prefixes": 4575,
+      "rows": 4575
+    },
+    "MA-L": {
+      "prefixes": 40497,
+      "rows": 40500
+    },
+    "MA-M": {
+      "prefixes": 6688,
+      "rows": 6688
+    },
+    "MA-S": {
+      "prefixes": 7281,
+      "rows": 7281
+    }
+  },
+  "registry_conflicts": 3,
+  "snapshot": "8e4c100ba1540c6a",
+  "svg_icons": 193,
+  "unmapped_organizations": 33692
+}

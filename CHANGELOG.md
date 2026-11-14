@@ -2,16 +2,27 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-14
+
 ### Added
 
+- Monthly and manual vendor-data updates that test generated snapshots, create update pull requests, and retain icon candidate previews and Nmap comparison reports.
+- Automatic icon discovery from unique exact directory matches, with ambiguous and partial matches left as reviewable candidates.
+- Bundled SVG path text for 193 brand icons, including MSI, Proxmox, and QEMU, with source checksums and per-icon notices.
 - A concise English bug report form with firmware version, behavior, and screenshots.
 
 ### Changed
 
-- Build and publish only the installable IPK; remove separate payload archives, manifests, and checksum files from the package workflow.
+- Include all IEEE MA-L, MA-M, MA-S, and legacy IAB assignments: 59,041 prefixes and 34,050 distinct registered organization names in this snapshot.
+- Preserve original IEEE organization names in client tables, details, and CSV exports; retain brand names for icon associations and search.
+- Split vendor data, brand mappings, and SVG text into separate offline modules and use compact indexes with longest-prefix lookup.
+- Use Nmap only to report differences; do not merge its assignments into the runtime database.
+- Build and publish only the installable IPK, removing separate payload archives, manifests, and checksum files from release assets.
 
 ### Fixed
 
+- Stop filtering registered manufacturers through the brand-icon list and recognize uppercase organization names such as XIAOMI.
+- Identify Proxmox registrations and QEMU's conventional virtual NIC prefix while excluding other locally administered addresses from IEEE lookups.
 - Validate release notes before starting the full test suite.
 - Upload validated build assets to an existing GitHub Release, preserving any release notes already supplied by the maintainer.
 

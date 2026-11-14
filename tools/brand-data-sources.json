@@ -1,43 +1,563 @@
 {
+  "https://raw.githubusercontent.com/selfhst/icons/main/index.json": {
+    "bytes": 885233,
+    "sha256": "29b19ec2b0abeac173e788c9b3d3c3f4880a3838aaf6f13e5e168a4740e217b9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/DISCLAIMER.md": {
+    "bytes": 4604,
+    "sha256": "5757a1f28eff735a8b5e7425478f367812d71e974530f5bedd01219480965f4a"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/LICENSE.md": {
     "bytes": 6569,
     "sha256": "9046848b63a5c92bff14e4accca80bd987e0623b74adf9226ce5198d312b79d5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/data/simple-icons.json": {
+    "bytes": 461021,
+    "sha256": "565d768fec23d53f3aa7984110867dc0165a49329e2cf7c1e00c3955a4bb3c19"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/3m.svg": {
+    "bytes": 655,
+    "sha256": "20c2d88866f80d38325e81b42cce39887c84f0a4a76e995b1acdf7f003f98485"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/abb.svg": {
+    "bytes": 801,
+    "sha256": "2cf351140268bd5a16e9d3501291a5c493544e84dade09a0192269268a9b7b54"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/acer.svg": {
+    "bytes": 1816,
+    "sha256": "134f2083b4a00cab30b9af036392ae4fe85729ff8efe2ca62021ca1191a1f675"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/adafruit.svg": {
+    "bytes": 1742,
+    "sha256": "ac289e550cb36786e43ccd401cfab3d0c53e50b22aa3bf46ec5bb971fb6eed7d"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/adidas.svg": {
+    "bytes": 243,
+    "sha256": "914191458c0f416cfb1e5ad5750c55e87bd9a6cdc38259cfba70932b30a9237b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/agora.svg": {
+    "bytes": 1512,
+    "sha256": "1a039c76b7d3221712ccdf4699b92753e4faddb327e6dbb758007f9dd7208634"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/amd.svg": {
+    "bytes": 567,
+    "sha256": "c4c2f985dc1427aa7a54e3f80ef5ca35dba911bbed184a0dc6def148c1dfa420"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/apple.svg": {
     "bytes": 650,
     "sha256": "2a1509dccd25e6d2bc7a11a8e52941077e1a48555e192ce638699b9f083c2a7c"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/arduino.svg": {
+    "bytes": 964,
+    "sha256": "e3e0b836d682159a1d0660e3081527fca03bf767202dff3bdebea3593fd7e77a"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/arm.svg": {
+    "bytes": 1028,
+    "sha256": "d2a132ecc901b543ffcb7df21724b269c6b7bcc5c66631b4dc3614a729823259"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/astro.svg": {
+    "bytes": 779,
+    "sha256": "fe8e943b26bf966824341377875056270af186e500bdf4732c803b51c0b4f674"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/asus.svg": {
+    "bytes": 914,
+    "sha256": "3c44aa3018aff929760e1812ee4bba3c77098ab5c9ea8a815b66f5c70f3074b4"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/atandt.svg": {
+    "bytes": 1440,
+    "sha256": "50c6ff01370f61d22de20f8c168b85413cfe52def9a53ed4bee32ebc9abe2413"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/atari.svg": {
+    "bytes": 506,
+    "sha256": "c6f4ae9e3f876e23e1c80d869a9c3d768c4e8edbfbe94a5d41e2ea80c105fdbc"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/audi.svg": {
+    "bytes": 2113,
+    "sha256": "daebead0fb61bc8cd88e90adabca5161a9b52a8d4202ce89c18daeab6bd70d7e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/audiotechnica.svg": {
+    "bytes": 514,
+    "sha256": "e439a270ed4e77ed7d64109afac4beddfa82b1a46e91b6144295cfb7aa550548"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/autoit.svg": {
+    "bytes": 508,
+    "sha256": "ce914432dd8e18c0b20e6b778b476363ff6005b686c043cb54714e9fa94b3532"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/avm.svg": {
+    "bytes": 292,
+    "sha256": "99949ce37d04cfaf01ff7adf8d5ea0194ae6382ddbebc59ddab01f75a91de0b2"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bankofamerica.svg": {
+    "bytes": 1326,
+    "sha256": "4af97000b06a925cf8ce6359855de2fbc502c59edcb10d26302e231d86fb8a02"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bitdefender.svg": {
+    "bytes": 565,
+    "sha256": "4b86a7be3d81cd7484b3a1fdaebe346f99040b6212ebb8ec059e55a8a43ef2b6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/blackmagicdesign.svg": {
+    "bytes": 1012,
+    "sha256": "1d76a63aa6030525f68a08e61c710ebcde03ee31182d1593a0542179525da313"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bluesky.svg": {
+    "bytes": 565,
+    "sha256": "49752973164fbbf4464fbb4776f011c1eff207e5d7ad9254e031af025814eb75"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bmcsoftware.svg": {
+    "bytes": 569,
+    "sha256": "8d4e6f3e743e4e67c9e9ed5743e83983d81c2d952049534899bf100fcd0849a7"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bmw.svg": {
+    "bytes": 1598,
+    "sha256": "d2a396f98f388b06861ed887a0d9830ed5e32224726c2acf000250e6ef289dcf"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/boeing.svg": {
+    "bytes": 937,
+    "sha256": "6c8518f4fe0095c15957c287588e48a188a4e8f7421da2a4c99d4021d1e4e1c6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/boosty.svg": {
+    "bytes": 355,
+    "sha256": "7368b5b68fb51160763bb171c3af41caa7adf185a7797ae44f417bcc430ca343"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bose.svg": {
+    "bytes": 1377,
+    "sha256": "b2e63f03d22e05f6cb3d3793c2598a13bcd82f38d25334420993bbc0493098db"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/broadcom.svg": {
+    "bytes": 1156,
+    "sha256": "1ffeecaac8bf5a6c5a5dc9aa1bd788b80777c81231049fd164dc0157a2c24d1e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/bytedance.svg": {
+    "bytes": 331,
+    "sha256": "03a322949b34209cb0446382bbaf1c458eeffd75a6930f6bf37ca910578a6429"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/caterpillar.svg": {
+    "bytes": 573,
+    "sha256": "0da685b81098ec589358f29d66527a8785d17cb59a31a2f2b3b3f1916f80b616"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/cbc.svg": {
+    "bytes": 1239,
+    "sha256": "37d26c0cf03c94ebe839be1939c4f1431fc35c36f1011c7dc9f83887235efcdc"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/centos.svg": {
+    "bytes": 1244,
+    "sha256": "94a3ca4414ed77c8bdf1ff0bd6d40d64ac4e27bd863889af50044ab6167ce1fa"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/cloudflare.svg": {
+    "bytes": 1178,
+    "sha256": "408096d99907fd99e0863cb5d73f77a72537c6a85fd8d5e2704178a83a891f08"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/creativetechnology.svg": {
+    "bytes": 1150,
+    "sha256": "45afa4de42e5ad9eed1b85e2fdc9f13076fc1fefe2af18fecf8249a69807f4ca"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/css.svg": {
+    "bytes": 1479,
+    "sha256": "9a97b95e3207aa4a6545dbb862e22450a01f37201c00e6b7d9c2958b59ca9ff9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/cts.svg": {
+    "bytes": 1515,
+    "sha256": "421d7d3c8979f64d401e34970811949fc6d584a31cd64d1d1e05dd65a53fda0f"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/dell.svg": {
     "bytes": 1450,
     "sha256": "be787bc8a294cecf64f7197b36f3f095583b2274f13ab336e7dabfe582353c45"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/delta.svg": {
+    "bytes": 981,
+    "sha256": "720a08ad33fce14e48a46e57cb9c01492dfc34e113d3b9e4a60710ee7b36f1d3"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/deutschetelekom.svg": {
+    "bytes": 393,
+    "sha256": "02b09a7d3fee5623e033d87590a448a5c6d4bd65573d176a60db26648670884e"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/dji.svg": {
     "bytes": 1646,
     "sha256": "8a589463e3007e665ffe1f36fa484fefdb34247aad77cca7a3983d2ba38ef1be"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/dts.svg": {
+    "bytes": 786,
+    "sha256": "1e468dc7745e630ce5365b80c8f4778b859578601d2ae4d2e8dba6863060ab80"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/dvc.svg": {
+    "bytes": 1373,
+    "sha256": "fee9645d9cf29f32ad19472b276fe4d417b7aee00ae979d88fdb2b4fdb7f4aea"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ebay.svg": {
+    "bytes": 1268,
+    "sha256": "846e8d8ac6cea49766e7c62e095e739d115ed355f9b63bf46067f14c9343c745"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/eight.svg": {
+    "bytes": 440,
+    "sha256": "8f4bc2d28b63022209a6d4b4bb7305b5d578831e33d8864350a8160c34754b69"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/eightsleep.svg": {
+    "bytes": 726,
+    "sha256": "a1d9f2a9707035e19889d28fccc049e109fc9ac02d1403760d35d7fdde6d38bc"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/elm.svg": {
+    "bytes": 329,
+    "sha256": "dda175eb4b747b1d18f740b13812f15679ac9179d55e4ae061f93fb3b4dfa06c"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ens.svg": {
+    "bytes": 754,
+    "sha256": "bb0509cbd78f49b2417c5ab68f39298fe7785b40cf071b465750395c90d51388"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ericsson.svg": {
+    "bytes": 837,
+    "sha256": "38bd6b364ec5e65057f04a83e091267dd9eec1b4a862fb79e23a0e31e18acb24"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/espressif.svg": {
     "bytes": 1105,
     "sha256": "d0c66fc70620542d6fd16c5369d99cebd110abdcc24b7233c2d3dd14d256d420"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/f5.svg": {
+    "bytes": 2576,
+    "sha256": "4661fd69d282bb1964f3ba25c66cdef33a75f5ea27bba6ee6a23e5b436c1ebeb"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/facebook.svg": {
+    "bytes": 542,
+    "sha256": "b06d18d844ed621b89faffb1a33440cc0ec4f1ffea9f36191f50db19a47c59a6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fairphone.svg": {
+    "bytes": 2455,
+    "sha256": "6c268e3921c5f49c8d95a36b69277ea59d4bf21db7f562553ca385f7f0c4bad2"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/firewalla.svg": {
+    "bytes": 687,
+    "sha256": "283219a75cb23abe43c5d4ccb5494b12bd2a714d73fe3995470346fce47c90af"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/first.svg": {
+    "bytes": 6580,
+    "sha256": "dc0df5d2cfa6fbfddcd795e6a8162c0c70c17f91e4209ce0c80e9745074e17a9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fitbit.svg": {
+    "bytes": 1775,
+    "sha256": "8bca3e50e008b210c12667b5443ef7f63274f50b229c6bd61f5653a53349fca4"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/flashforge.svg": {
+    "bytes": 240,
+    "sha256": "7ffb891a4674594f4822f0a5a2cb969988387fbdc7d2bd62ad8c2f39deb738f3"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/flux.svg": {
+    "bytes": 1725,
+    "sha256": "7a2f30a7c7638f48f62a6410051680ad64b0e9d9ce41b0fb5ccad4f8821d77dc"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ford.svg": {
+    "bytes": 4162,
+    "sha256": "933a0ad57caec864d69c4afb43c316018ebc54bd8e76244ffe545197236299c1"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fortinet.svg": {
+    "bytes": 474,
+    "sha256": "5feafff8531436630ccd7d5c2e80819ee74c1820fdba23d98057eebe02553b86"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/foxtel.svg": {
+    "bytes": 626,
+    "sha256": "252539c9ed5a30b88c27a191800f7b04d6c0fd7c8cb5667ae75e351d527e8df5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fresh.svg": {
+    "bytes": 1919,
+    "sha256": "07a33edf944e2755141a346ab209185033af8b14eb5bbcedc7ed552109c381e0"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fujifilm.svg": {
+    "bytes": 1575,
+    "sha256": "32614acc01d693ef73bfa82680f10c07d5a433d78896c013c2d6fb2b9ee379b4"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/fujitsu.svg": {
+    "bytes": 634,
+    "sha256": "42be786b1ed9ddebdd318711aee0f5a066a217eddb26772c7cb60cf2f1035831"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/generalelectric.svg": {
+    "bytes": 2924,
+    "sha256": "6a075c90b40f29299fdbb69a35325971e76d77c029ec441382b1771b141c6af2"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/generalmotors.svg": {
+    "bytes": 808,
+    "sha256": "e5957f18f6ce6cb554a3e38d766bcfc7e3a820fc8b79834ae65b47e44f5bd4c3"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/git.svg": {
+    "bytes": 426,
+    "sha256": "95724d436215d483de82288610c3c144854138f49945424697fcdf8be66e17d6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/gmx.svg": {
+    "bytes": 673,
+    "sha256": "d082277e8c91cf538727216493b8d6313ae3750dae599940e4e24aedeb9855b5"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/google.svg": {
     "bytes": 457,
     "sha256": "d8cf9fb2d5e234e03254f1d6400d8cc8160c309b010d031a64f37084b5a21d01"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/hcl.svg": {
+    "bytes": 650,
+    "sha256": "e52ba03cdf37c804cc33121b2f0d36b682f1f6b4cd8320d8ad40c08db684f566"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/hitachi.svg": {
+    "bytes": 1262,
+    "sha256": "e0107f27b724ce039851a0111a01ef5e27d78f07d19531dbfd1fb230d4f8051f"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/hive.svg": {
+    "bytes": 1443,
+    "sha256": "bbae2b7563a9c32a831ca2cf82ee3af54bacae8a7fb442297a8daf52ad47aea7"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/honor.svg": {
+    "bytes": 1074,
+    "sha256": "f0b59f37b9da2bc9f0b6df63a8ee371b6e77bfa49931715904c6a993f32e5402"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/hp.svg": {
     "bytes": 641,
     "sha256": "29c08a63cdea89850876a3840d93096b4125151dbba17a27926a08f9f3b0f788"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/htc.svg": {
+    "bytes": 527,
+    "sha256": "f79566c7fecb03dcc9f5ff9cc4264b6e63bebf970a39e257db76844ab8220e72"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/huawei.svg": {
     "bytes": 1323,
     "sha256": "eb43e0a9450cef22ce70d624a60622a0aa542142102e402a293578b388b876f5"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/husqvarna.svg": {
+    "bytes": 1358,
+    "sha256": "d8f3bbef16ed5067f163e387bb84ddc5861b8f6f30ffc2cf38671a8c897ef5f2"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/intel.svg": {
+    "bytes": 1817,
+    "sha256": "25d0d4387af0999eb5dc79b165ecfd7b972ff43047406da533f3207ac92c0a57"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/intercom.svg": {
+    "bytes": 983,
+    "sha256": "5500c77b2e27022c06ef7457ff395e2c41398a3fb03b41b02e337af3e3ecdb54"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ionos.svg": {
+    "bytes": 1799,
+    "sha256": "8ce73d1c1af4a747d6b7a892062a90fcaccbb00a7415e4d10da0e68056c7ba33"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/iota.svg": {
+    "bytes": 3771,
+    "sha256": "184d9535af6bfb7757dfb551cd6c5e64771d6eb90d3b91ae67086801d1218a0b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/irobot.svg": {
+    "bytes": 512,
+    "sha256": "55d509ad914453e7c5faeb62a7a2199b585103d4b6b3ecd3194cb3dcfdb777de"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/jbl.svg": {
+    "bytes": 996,
+    "sha256": "d2921f06af09593f48fdd6e2bb82dcf1e2445e9d6beddf07812ea45c847238ef"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/junipernetworks.svg": {
+    "bytes": 3211,
+    "sha256": "c2a373671adf7f9e610113d0ac7850dcdb280d36960c92094aa64b0567e4050a"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/kakao.svg": {
+    "bytes": 2269,
+    "sha256": "01af137d8a9b05d7acfef0577d88ee56c9389cec70e5b9d3d873b19aee9b4673"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/kde.svg": {
+    "bytes": 871,
+    "sha256": "4db4ecb1658360375aecc47308f506a5e470f6bdb7af98f02a4743fa3c30fbd9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/keenetic.svg": {
+    "bytes": 331,
+    "sha256": "407f5f374f08691690a4cf9a381b51fb0996ee16796c9816405837b60422ab13"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/kingstontechnology.svg": {
+    "bytes": 2803,
+    "sha256": "deb46952d1084b0da110e98a06a83fec4d67327e2ea57de71f9c7cd41e8e238d"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/konami.svg": {
+    "bytes": 1757,
+    "sha256": "bce469509af1aee521364d07d0ad6401a65a05bf2e34a5aa2b754d90e232751e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/kyocera.svg": {
+    "bytes": 326,
+    "sha256": "cfd39c60083482dc8882f682f14f6938ea99cbcd14a6803c332d42303015c1ed"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/lenovo.svg": {
+    "bytes": 1209,
+    "sha256": "6d2d3756e0b0dd70a7f8d678794b43c89eb08871a45bcd79ede8ecc64a6141ca"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/lg.svg": {
     "bytes": 983,
     "sha256": "bde201887c0e190b0b1bbc15c71a0996ed818050d8db5764adb310f0a4043020"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/linear.svg": {
+    "bytes": 453,
+    "sha256": "90b91b61090f4f9c94f9cb24769642278f03e8eedcfe5680738cf3a186bfc00f"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/logmein.svg": {
+    "bytes": 1927,
+    "sha256": "a5da2f4b30be555db3a8183754354cf0075181bfe666bb22a2af60d9fe29f60b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/matrix.svg": {
+    "bytes": 939,
+    "sha256": "07e6a16f5437fb0e7704c15b97bd50f46f3fa8968e022af2b9f2395fe0419d72"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/max.svg": {
+    "bytes": 807,
+    "sha256": "526c55b90b2ccd9a8120e4687e1eaf5aee696c804eb6b600c8ef5c368e5c2879"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mcafee.svg": {
+    "bytes": 238,
+    "sha256": "3b846379c62abe0cde7bb19657e036cab59fc8c318c9955ee5717dde5aa85dcd"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mcdonalds.svg": {
+    "bytes": 402,
+    "sha256": "35c203615d2d5d61184ea1f4ded91ebbf329a59e7e2d52e0a640f3b8fd8b740a"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mediafire.svg": {
+    "bytes": 686,
+    "sha256": "d8a34c27e2febb2a8eade8b43fceb4f7f5c77060061dd369fe9950d70de9092c"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mediatek.svg": {
+    "bytes": 1046,
+    "sha256": "b87119aeb0963afe72e533d4feccc92e0323b14edfb7c05eacf99fed7a5fb2a0"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/metro.svg": {
+    "bytes": 905,
+    "sha256": "dd6b9946874d514247a5090b140ed2bbb62c9ac15b4f45ba76618541e87a4a28"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mg.svg": {
+    "bytes": 4844,
+    "sha256": "51b79569d32c05fb19e99f03c8ff8edd90a445b3d8f732a9e8bd8899e7a2a350"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mihoyo.svg": {
+    "bytes": 2163,
+    "sha256": "6a47045d60cf66487d953bc6552e24bef3812afc90423ea8edddcac0acb4beb5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/minds.svg": {
+    "bytes": 3100,
+    "sha256": "2909c2e52e52313480a643587c84e69c757b276e6eb32c0bd508c1ad50653076"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/minimax.svg": {
+    "bytes": 721,
+    "sha256": "ef95e28b290e5954a5c0be338925d81f13b3d06a0a32af29a4bc64583fbcc368"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/motorola.svg": {
+    "bytes": 566,
+    "sha256": "1ada1dc9593faf751a956ef08ce7810830f11ccffea12e9b43bcc318c2dc1044"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/msi.svg": {
+    "bytes": 8282,
+    "sha256": "79be40634e937238e44b16c1c182c24db4fb7ed121e6cdd5c30b23c682fe3f65"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/mta.svg": {
+    "bytes": 659,
+    "sha256": "6b352cb9a9512fb0485767b86eadd1f9bd776acc0697baf93a103c25c2eeda1f"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/myspace.svg": {
+    "bytes": 882,
+    "sha256": "1a9f3b7215d28b0b2936bffe4b41f2a868325bebca8499aeb2d158f665692fb9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/naver.svg": {
+    "bytes": 179,
+    "sha256": "6c8125ff3908b12e0d0e0dd56bfeaa90013547a0124f7e34e2b149ba474150a8"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ndr.svg": {
+    "bytes": 639,
+    "sha256": "63f7ec5baf85e084127633e9da7a6b1cc730e6c362a4f10732c556be8ea01d6b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nebula.svg": {
+    "bytes": 238,
+    "sha256": "bcb7f6dd5eeea7388205c3f5c56e7a4c6c9266ec270f64021130ce73a2070a1b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nec.svg": {
+    "bytes": 781,
+    "sha256": "282d2568a7a7317c29c93d566a5634ed6daabf3f88055bced1881f562d9d8130"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/neon.svg": {
+    "bytes": 193,
+    "sha256": "5750d31d5f07d3e5bcf7db3d7202111f863d39cb2f78aeeec0987a427819387e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/netapp.svg": {
+    "bytes": 139,
+    "sha256": "17a0f25cd3eff3e42c24bfbb725903aee443d0f12d5dafa34010a37f2d68ed59"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/netflix.svg": {
+    "bytes": 276,
+    "sha256": "67dbc495988bd5667a09ed4f56e14db4070a44c7a74e297b146c229f70fd6f6e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/netgear.svg": {
+    "bytes": 1434,
+    "sha256": "716b9c142d3ba8c7224527dc35116ab04830535bbb7d0760caaf85239b724f02"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nike.svg": {
+    "bytes": 397,
+    "sha256": "1792451e1b6393bd1d7153830f8aa55a0a49eddd1c3b65ed6fa13c68d7d5a547"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nikon.svg": {
+    "bytes": 1026,
+    "sha256": "f8d218c1c1188412c0975ea5815cbb3f82923af68adecf3389ae01d41215cedc"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nokia.svg": {
+    "bytes": 598,
+    "sha256": "0c26dfafc1b4267233783285f884cf0ff49113bcfce70e8ef57b5f47086fb896"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/norco.svg": {
+    "bytes": 318,
+    "sha256": "fce4c1a19a2387049a5b6ca90049c7b7c867b0a204147a6317e155c21a1d1d5e"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nordicsemiconductor.svg": {
+    "bytes": 852,
+    "sha256": "c97ae20af5d3b753db2b60fbfb66094f0f9c11b90eafa5057a505378bb94dc22"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nutanix.svg": {
+    "bytes": 698,
+    "sha256": "b24c39e47756d099832a3cff5cc23d3fa21e4aff38410af6062abb06c672a0d3"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nvidia.svg": {
+    "bytes": 881,
+    "sha256": "b0e4cfc12712c840d4d630c9a717200fbd09aeeadbd3faeac13bda2e2ed050b0"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/nzxt.svg": {
+    "bytes": 443,
+    "sha256": "3a77fcae0d894faaaeef118a7847ea927f1da25e9a30d7e04aa08b414ad44411"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/oneplus.svg": {
     "bytes": 352,
     "sha256": "36383c496fa98bdc3b4b72507e42408faaabb1887bbfd384aa4dd9c83a0686e6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/opentext.svg": {
+    "bytes": 2129,
+    "sha256": "73f7ffce4b8693bbc3a8ee2f035b4aac3b81fbb735401c79641745926b76dff5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/openwrt.svg": {
+    "bytes": 1177,
+    "sha256": "637830d2232d13c23abbeafff1aa10225c13eeec452b11d9fb71482af4a77596"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/oppo.svg": {
+    "bytes": 1219,
+    "sha256": "0af8ef2d3f3ada53779f8dbaab6243ceccb530a03deebe9bc7a054c89189cf5a"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/origin.svg": {
+    "bytes": 1375,
+    "sha256": "fd67332a9b4837921ba5b17f043501faf151670f3286fc431cac116830129ebd"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/oshkosh.svg": {
+    "bytes": 1563,
+    "sha256": "024ff1703c8bcfd89d30612d13a98fbbc66bf3fd3e794abed289262449015283"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/outline.svg": {
+    "bytes": 989,
+    "sha256": "57c2257e3cbf7ed81d369c3edc6052eddd1513ca6986b74f9b5cf513689bf1e3"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ovh.svg": {
+    "bytes": 364,
+    "sha256": "6edb906775201860a3d306b93c652943b207d8f968af05a5e38efc12f87ef4ed"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/paloaltonetworks.svg": {
+    "bytes": 346,
+    "sha256": "47b46a688d2117b938251c0a36568593562a07c221493f9d04bd1e0e536b1456"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/panasonic.svg": {
+    "bytes": 4875,
+    "sha256": "72034f2812318af5b16607f0038d7477678705a812a00d25149357e5bf472dd7"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/pangolin.svg": {
+    "bytes": 785,
+    "sha256": "ad2bf2b210433514b17d7e3cbf1aa8ee1ca93ee725204e5d4ad561b790ea24b1"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/paypal.svg": {
+    "bytes": 452,
+    "sha256": "e8ea6928d3386f81dc6d4c1f58b48e7a29d29bb578b2e3dd808638bd97c63d33"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/philipshue.svg": {
     "bytes": 1326,
@@ -47,24 +567,240 @@
     "bytes": 781,
     "sha256": "b68b4d7b63443759b9c4d77a5501c5758eeae06a6d594d278d5eb6cb4d3dbbe4"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/polestar.svg": {
+    "bytes": 221,
+    "sha256": "543ac583c8f6113152e310d7c7f6fbdf1516b28c3aed0d2cf3121030f406aebf"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/poly.svg": {
+    "bytes": 1587,
+    "sha256": "1fd3b20fb74c89d1a2a61c11df168d1cde1b2f491097e0808b38f00c14a5f6a8"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/proxmox.svg": {
+    "bytes": 1488,
+    "sha256": "95b5f2bce5447030acfc03c326c396c6b768b5c95b64e53c17f8a6910e6b3df7"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/qemu.svg": {
+    "bytes": 1456,
+    "sha256": "a5f1391561dd37a0e4be72f2dc94fe54148fab2bb1cfece0a528642610808f90"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/qualcomm.svg": {
+    "bytes": 760,
+    "sha256": "9c061b0000cfdf73bf32964c36976b041509816f991fb9385b2b6f4cca6088e5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/radar.svg": {
+    "bytes": 148,
+    "sha256": "b4009660311772a025635599451e14ba14db599c01a8023b74039fc19263261a"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/raspberrypi.svg": {
     "bytes": 5936,
     "sha256": "ab35cdb6cfd69779dfa54c8f15f0ed3c514ff6c07f1c941dd47a61115a208c59"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ray.svg": {
+    "bytes": 2092,
+    "sha256": "cffc8b6122f70be8557b834406465f4b9b4ac7719c4b6c5d0b6c5f643e31b074"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/razer.svg": {
+    "bytes": 7200,
+    "sha256": "e68b802b643535039c2cc4d50e0c4e9ee7811561b93c634876e9478e0886948b"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/relay.svg": {
+    "bytes": 821,
+    "sha256": "72072af830adecd07687df0868eb79b016591c7acca373d4897942782f14ce21"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ring.svg": {
+    "bytes": 2457,
+    "sha256": "94b5674f865aaf53bb6379ef35df97c41f016f233004b3ce1420d054f07a1e20"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/rockwellautomation.svg": {
+    "bytes": 1329,
+    "sha256": "83d2cc617d806fca32cfba6a1262784312b7fa6a8d5e8b66ace968ad73e270e5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/roku.svg": {
+    "bytes": 760,
+    "sha256": "3ed7df18c74ed3ef1ff25c5a610e068d28c937ed787c53cc8cc144e735f5794d"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/rollsroyce.svg": {
+    "bytes": 1824,
+    "sha256": "08b4e1fec2499029d9ec3e8d76d59857b5ae22856261096cdde07cdc5424e0b0"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/root.svg": {
+    "bytes": 861,
+    "sha256": "c7181b206ddb00d2036837fd77dde835c209fa245e1f5aafee1411ffd5cd3060"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sage.svg": {
+    "bytes": 1824,
+    "sha256": "cd54b9932be5e114a12384049c549d2a569d0e7b1d99c79d96d3d26fc7c46025"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/samsung.svg": {
+    "bytes": 2287,
+    "sha256": "4a241ca8ebab6e71883b172acb9fb454efa69f308e4f2c31ec80668aeb6627d9"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/scalar.svg": {
+    "bytes": 881,
+    "sha256": "f2dda3aadeb1665f327018aa5240b77fcd215fd35e52617fbc5dd9140b36a225"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/schneiderelectric.svg": {
+    "bytes": 770,
+    "sha256": "a7a02c7aaf241889d8480685a428fb933ffc779e3a1b6da491d00c68c65baced"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sentry.svg": {
+    "bytes": 686,
+    "sha256": "8ba32902ffbac503784607374f57df5e3cbcf57a99d0adff03e735575500adc6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sharp.svg": {
+    "bytes": 495,
+    "sha256": "be3e4564a16e3e99d7156ae876256b5570d64b67984a53e1eaf0a84f7869b6a4"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/siemens.svg": {
+    "bytes": 1427,
+    "sha256": "1693ea2d895352fc1dece78971eb7345424b622cea00bb99f3da551e23ec5a09"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sifive.svg": {
+    "bytes": 339,
+    "sha256": "27635d8a91ab7ba1a29daefb82251a01009b859b9e3a814dca0aa24fc8294df7"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/smartthings.svg": {
+    "bytes": 2356,
+    "sha256": "32e0bb023fc18f55b8f589bb071beff1ad02941672edd6543428c14bed0201d6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sonicwall.svg": {
+    "bytes": 2524,
+    "sha256": "337c2f42b827b5fe5ef538511ec7ecfc781c801fd59904f578337b60b06eb2d6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sonos.svg": {
+    "bytes": 1481,
+    "sha256": "fa5d24d5d38fbe891fee746e53e9d8c239947be07cee7ec8549bf589bc6fc486"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/sony.svg": {
+    "bytes": 2745,
+    "sha256": "d012ec936e65a255f7b7b49a7e99c5aa7ab919fbc1487d8e09af82031c0e7090"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/square.svg": {
+    "bytes": 459,
+    "sha256": "a686eabb6f2b6553da256c1a997b0cbdbcb8919a165956591462a5d0aab5e2ea"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/steelseries.svg": {
+    "bytes": 1146,
+    "sha256": "bd7ef9b272a99e1a3392bf39709184812b2b4e3ddf13fbf87cef26b4edbed2b2"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/stmicroelectronics.svg": {
+    "bytes": 1239,
+    "sha256": "f7bf49d9b19edc681243ef636efb1359bfcfc833439299d83de53b5cff921bd8"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/stryker.svg": {
+    "bytes": 1476,
+    "sha256": "e8e2cf0b14a65e91db46209c9d0f7667a1e222e52bbf976c34b731b44d1579c6"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/symantec.svg": {
+    "bytes": 1004,
+    "sha256": "2feed31751d20a557bec98a2ef5c74fd90f3623353eaa894716e04c225066e17"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/synology.svg": {
+    "bytes": 5242,
+    "sha256": "2b11f3cb29f858a3a28b2094a668f5700ff279051ffc475c4509333b7365db02"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/tado.svg": {
+    "bytes": 1233,
+    "sha256": "be8f7907efc6592d7a6f1ad635b978fef25aef83dc9370456fb2baf0502d6929"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/teradata.svg": {
+    "bytes": 403,
+    "sha256": "9eb9e4f6a0585f129de6207a1e3e6539ab68f21762a1b3718064c3e1315b51dd"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/tesla.svg": {
+    "bytes": 541,
+    "sha256": "4b94d9eaf23849d6feec7a9c819e3699a35cbb76045ba7d482d17cbcc97414a5"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/theweatherchannel.svg": {
+    "bytes": 6098,
+    "sha256": "0d771b33d6c5e9b36d1c72e50b53ea3aa9bf8e7287311b8dc2d3e64db6433261"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ticketmaster.svg": {
+    "bytes": 4437,
+    "sha256": "8765b871779af63e136c2f4976ce28cf659b390d33e33ddc0fc5e3f2d7d16d02"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/tide.svg": {
+    "bytes": 1038,
+    "sha256": "eb5271dde231d1a6cdc84aad6ecf3814268114062065f2715efa7a5ff3365255"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/tomtom.svg": {
+    "bytes": 384,
+    "sha256": "ba1f1b8e4c382d69e59a9fb8583c3c65256b2f9522f20490dc722a512203ae03"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/toshiba.svg": {
+    "bytes": 1612,
+    "sha256": "d521d9b55916810d33f9f726cf33dffb9cf7220908492e6a39b41679454c4e23"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/tplink.svg": {
     "bytes": 440,
     "sha256": "953a4ef5b2560a10964b51667469c933314fcfcef35d655245430de0369447e2"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/trimble.svg": {
+    "bytes": 1470,
+    "sha256": "68422cdaaec72d0141f5b16370036d79cb568410767a1354ea7852a159d7dfbb"
+  },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/ubiquiti.svg": {
     "bytes": 1321,
     "sha256": "7082e9be5c0b167c30c3de6903ec7e497574b845a33415a572d4d1468f40e810"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/valve.svg": {
+    "bytes": 464,
+    "sha256": "e90ac1e32325f35c9713a58683b2d4987bfb29887ed6109c7eb540bb71a4b03d"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/verizon.svg": {
+    "bytes": 168,
+    "sha256": "75ba3377920bb28e0ea8616ba4b22b3ca6ad75f8a6787e82ed0c866876a95444"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/vivint.svg": {
+    "bytes": 512,
+    "sha256": "1aa2721c6fe2340b330ba1496df5e6fbb5ec26f56532f717f239938502889b37"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/vivo.svg": {
+    "bytes": 1268,
+    "sha256": "1db247986bd07a7b7a1754fa285f61c445d4767037fda96b6e5d72a60d1e4f94"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/vk.svg": {
+    "bytes": 1278,
+    "sha256": "2d8fae863c9fdf5937f49326708dcf6cff0f5617ee67b502776b426bbe2cace8"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/vmware.svg": {
+    "bytes": 2167,
+    "sha256": "4c3970bf3955a3e95c7d9eef7f4f45528c487dffa92092ce9273913f8271029a"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/wacom.svg": {
+    "bytes": 2890,
+    "sha256": "0d890c0acf1fce24c408eeb042b7fa1dc35aea9c746afabe8218fce60301c58d"
   },
   "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/xiaomi.svg": {
     "bytes": 903,
     "sha256": "8866d12a70d85ab43acd3b9c80f1b37792d91160d8273efffdf817af5fd608cb"
   },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/yamahacorporation.svg": {
+    "bytes": 1532,
+    "sha256": "e43919b082ef81d0c29c38a2a342b71e090fcc640c71a3166fc755981566d252"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/yamahamotorcorporation.svg": {
+    "bytes": 1886,
+    "sha256": "d7394426f1dd3951d8b6c7e9544c0acfb2e62e8ecb9be3de1dec505a771ec8ee"
+  },
+  "https://raw.githubusercontent.com/simple-icons/simple-icons/16.37.0/icons/zebratechnologies.svg": {
+    "bytes": 1548,
+    "sha256": "d7b4025c8b92dc65d0ed3495115ca21e3052fc6aecb105cf724c66341f7781b2"
+  },
+  "https://standards-oui.ieee.org/iab/iab.csv": {
+    "bytes": 381117,
+    "sha256": "6e71aa3d47f00f19d09cb3b31ce1038de1834703420f0ce4ce111da586f1a533"
+  },
   "https://standards-oui.ieee.org/oui/oui.csv": {
-    "bytes": 3872139,
-    "sha256": "ba2fd0e45699b4a362694e0f313b0c05dc5c42f7e9b2c3736bc785ff487e2f8e"
+    "bytes": 3875121,
+    "sha256": "b7f3fed411869c2b6768f17e58ea34401adde68c1b8482e9be221c68d36acf56"
+  },
+  "https://standards-oui.ieee.org/oui28/mam.csv": {
+    "bytes": 764159,
+    "sha256": "445335bf9db2c1e254144d16a224756e7afa7ea32c99513a11760d777a4912c9"
+  },
+  "https://standards-oui.ieee.org/oui36/oui36.csv": {
+    "bytes": 676450,
+    "sha256": "cc638fce214dc4f67a7c13b102f1c6957942698452d29f0f8c22c6725d2b4c22"
   }
 }

@@ -16,7 +16,7 @@ function rate(kbps){return kbps==null?'—':(kbps>=1000?(kbps/1000).toFixed(1)+'
 function ago(ms){return ms==null?'—':ms<1000?t('刚刚','Just now'):ms<60000?Math.floor(ms/1000)+t(' 秒前','s ago'):Math.floor(ms/60000)+t(' 分钟前','m ago');}
 function status(row){return {associated:t('已关联','Associated'),neighbor:t('邻居记录','Neighbor'),lease:t('租约有效','Valid lease'),static:t('静态配置','Reserved'),known:t('已知记录','Known')}[row.status];}
 function name(row){return row.name||t('未知设备','Unknown device');}
-function identitySource(id){return id.source==='hostname'?t('主机名推测','Hostname hint'):id.source==='mac'?t('MAC 前缀匹配','MAC prefix match'):t('未识别','Not identified');}
+function identitySource(id){return id.source==='hostname'?t('主机名推测','Hostname hint'):id.source==='mac'?t('MAC 前缀匹配','MAC prefix match'):id.source==='virtual'?t('虚拟网卡前缀匹配','Virtual NIC prefix match'):t('未识别','Not identified');}
 function deviceType(type){return {phone:t('手机','Phone'),tablet:t('平板','Tablet'),computer:t('电脑','Computer'),tv:t('电视','TV'),printer:t('打印机','Printer'),camera:t('摄像头','Camera'),storage:t('存储设备','Storage'),speaker:t('音箱','Speaker'),game:t('游戏机','Game console'),network:t('网络设备','Network device'),watch:t('手表','Watch'),iot:t('智能设备','Smart device')}[type]||t('未知','Unknown');}
 function sourceName(s){return {hint:t('主机提示','Host hints'),neighbor:t('ARP 邻居','ARP neighbor'),lease:'DHCP',static:t('静态租约','Reservation'),wifi:t('无线关联','Wi-Fi association')}[s]||s;}
 var columns=[

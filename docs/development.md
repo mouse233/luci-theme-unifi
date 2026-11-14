@@ -85,14 +85,32 @@ Optional overrides are `UNIFI_PREVIEW_URL` and `PLAYWRIGHT_CHROMIUM_EXECUTABLE`.
 
 ### Update vendor data
 
-The generated `htdocs/luci-static/resources/unifi/brand-data.js` is committed, so normal builds and router use work without downloading brand data. Definitions live in `tools/brand-definitions.json`, and source checksums are recorded in `tools/brand-data-sources.json`.
+`tools/generate_brands.py` compiles three committed, offline LuCI modules:
+
+| Module | Contents |
+| --- | --- |
+| `vendor-data.js` | All IEEE MA-L, MA-M, MA-S and legacy IAB assignments, packed sorted indexes and the original organization names in one snapshot |
+| `brand-map.js` | Confirmed mappings and unique exact directory matches used to select icons; names in the vendor column remain the original IEEE names |
+| `icon-data.js` | Validated SVG path strings, not external image URLs or Base64-encoded images |
+
+The browser searches compact byte arrays from the longest prefix to the shortest (36, 28, 24 bits), without creating an object for every assignment. The vendor names and their numeric references always live in the same module. All three modules include a snapshot identifier. Hostname hints are used when no registry assignment is available. QEMU's conventional `52:54:00` prefix remains a separate virtual NIC hint; other local MACs are not looked up as IEEE assignments. Vendor search also accepts the associated brand name, while table cells, details and CSV retain the original registered organization.
 
 ```sh
 python3 tools/generate_brands.py
 python3 tools/generate_brands.py --check
+python3 tools/generate_brands.py --refresh --audit-nmap
+python3 tools/generate_brands.py --refresh --update-icons --audit-nmap
 ```
 
-The first command downloads source files into the ignored `vendor/brand-data/` cache. `--check` verifies against that cache without downloading. Use `--refresh` only when intentionally updating upstream data, then review the generated module, provenance, and license changes together.
+Normal generation uses the ignored `vendor/brand-data/` cache and checks the source SHA-256 hashes in `tools/brand-data-sources.json`; missing inputs are downloaded. `--check` never downloads. Only `--refresh` accepts changed sources. `--update-icons` additionally chooses the latest stable Simple Icons release and updates `tools/brand-data-config.json` after validation. Runtime assignments never depend on Nmap or OUI-Master-Database.
+
+Brand definitions are in `tools/brand-definitions.json`. The generator uses the pinned Simple Icons metadata and selfh.st's index to find candidates. Confirmed patterns take priority; only a unique normalized exact title or declared Simple Icons alias can create an automatic icon mapping. Partial names and ambiguous matches are reported without changing the mapping or original organization name. Generic company words are excluded from candidate search. selfh.st provides supplemental candidates; only Simple Icons paths are automatically embedded by the current path-only renderer. To adopt a candidate, add a reviewed organization pattern and an available Simple Icons slug to the definitions, then regenerate.
+
+`artifacts/brand-data/` contains complete candidate JSON, an HTML preview of the first 200 candidate organizations, unavailable configured icons, registry conflicts, an optional Nmap comparison, and an update summary. The HTML preview contacts the listed upstream image hosts when opened; these preview URLs are never installed on routers. Nmap label differences often reflect abbreviations and are not treated as conflicting registrations. Duplicate IEEE assignments retain the last row within a registry; MA-S takes precedence over legacy IAB for identical prefixes. All such conflicts are reported. Source row validation, minimum sizes and a 5% shrink guard prevent incomplete downloads from replacing a snapshot. A reviewed reduction can be regenerated with `--allow-shrink`.
+
+The monthly `Update vendor and icon data` workflow runs on the 2nd at 03:23 UTC (11:23 China time), and can also be run manually. It refreshes the sources, generates candidate and Nmap reports, checks reproducibility, runs unit/packaging and client browser tests, then creates or updates `automation/update-brand-data` as a pull request. It does not merge automatically or update deployed routers. Report artifacts are retained for 30 days. The repository must allow Actions to create pull requests. An optional `BRAND_DATA_TOKEN` can be supplied when a project requires the generated PR to trigger other workflows; otherwise the workflow uses `GITHUB_TOKEN` and runs its own checks before opening the PR.
+
+Generated asset checksums and coverage counts are in `tools/brand-data-summary.json`. Per-icon upstream references and available license metadata, the library license and disclaimer are included in `root/usr/share/licenses/luci-theme-unifi/`. Some manufacturers have no available logo; their original names remain fully searchable and visible with a generic icon.
 
 ### Source layout and release hygiene
 

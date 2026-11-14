@@ -96,8 +96,30 @@ const appearance = el => {
         {'00:1B:63:12:34:56': {name: 'Studio Device', ipaddrs: ['10.0.0.210']}})}));
     });
     await search.fill('Studio Device');
-    assert.equal(await clients.locator('tbody .uf-client-col-vendor').textContent(), 'Apple');
+    assert.equal(await clients.locator('tbody .uf-client-col-vendor').textContent(), 'Apple, Inc.');
     assert.equal(await clients.locator('tbody .uf-client-vendor').getAttribute('title'), 'MAC 前缀匹配');
+    await clients.evaluate(() => {
+      const view = modules['unifi.clients'];
+      view.accept(Object.assign({}, view.data, {hints: Object.assign({}, view.data.hints, {
+        'BC:24:11:12:34:56': {name: 'Virtual Guest', ipaddrs: ['10.0.0.211']},
+        '52:54:00:12:34:56': {name: 'Virtual Machine', ipaddrs: ['10.0.0.212']},
+        '00:D8:61:12:34:56': {name: 'Desktop Device', ipaddrs: ['10.0.0.214']},
+        '60:BE:B4:12:34:56': {name: 'Registry Device', ipaddrs: ['10.0.0.213']}
+      })}));
+    });
+    for (const [vendor, source] of [['Proxmox Server Solutions GmbH', 'MAC 前缀匹配'], ['QEMU', '虚拟网卡前缀匹配'], ['Micro-Star INTL CO., LTD.', 'MAC 前缀匹配'], ['S-Bluetech co., limited', 'MAC 前缀匹配']]) {
+      await search.fill(vendor);
+      assert.equal(await clients.locator('tbody .uf-client-col-vendor').textContent(), vendor);
+      assert.equal(await clients.locator('tbody .uf-client-vendor').getAttribute('title'), source);
+      if (vendor !== 'S-Bluetech co., limited') {
+        assert.ok(await clients.locator('tbody .uf-brand-avatar svg path').count(), vendor + ' uses its SVG logo');
+        assert.equal(await clients.locator('tbody .uf-brand-avatar b').count(), 0, vendor + ' has no letter placeholder');
+      }
+      await clients.locator('tbody .uf-client-name').click();
+      assert.ok((await clients.locator('.uf-client-drawer-content').textContent()).includes(vendor));
+      await clients.getByRole('button', {name: '关闭设备详情'}).click();
+    }
+    checked.push('Proxmox, QEMU and MSI render SVG logos; organizations without a brand icon appear in vendor search and details');
     await search.fill('');
     await flat(clients.locator('tbody input[type=checkbox]').first(), 'client row checkbox', true);
     await clients.locator('tbody input[type=checkbox]').first().check();

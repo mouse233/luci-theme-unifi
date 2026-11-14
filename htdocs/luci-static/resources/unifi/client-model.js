@@ -44,7 +44,7 @@ return baseclass.extend({
 			if(state.connection==='wifi'&&!r.associated)return false;
 			if(state.connection==='other'&&r.associated)return false;
 			if(state.network&&r.networks.indexOf(state.network)<0)return false;
-			return !search||[r.name,r.mac,r.id,r.device,r.ssid,r.identity&&r.identity.name].concat(r.ipv4,r.ipv6,r.networks).join(' ').toLowerCase().indexOf(search)>=0;
+			return !search||[r.name,r.mac,r.id,r.device,r.ssid,r.identity&&r.identity.name,r.identity&&r.identity.brand].concat(r.ipv4,r.ipv6,r.networks).join(' ').toLowerCase().indexOf(search)>=0;
 		});
 		var key=state.sort||'name',direction=state.direction==='desc'?-1:1;
 		return filtered.slice().sort(function(a,b){

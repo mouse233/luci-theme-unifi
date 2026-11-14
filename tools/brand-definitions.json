@@ -30,5 +30,8 @@
   "zte": {"name":"ZTE","letter":"Z","color":"#0081cc","organizations":"^zte|ZTE Corporation"},
   "tcl": {"name":"TCL","letter":"T","color":"#e4002b","organizations":"^TCL"},
   "hisense": {"name":"Hisense","letter":"H","color":"#008c78","organizations":"Hisense"},
+  "proxmox": {"name":"Proxmox","icon":"proxmox","color":"#e57000","type":"computer","organizations":"^Proxmox Server Solutions"},
+  "qemu": {"name":"QEMU","icon":"qemu","color":"#e57000","type":"computer","organizations":"^QEMU"},
+  "msi": {"name":"MSI","icon":"msi","color":"#d71920","type":"computer","organizations":"^Micro-Star"},
   "_network": {"name":null,"type":"computer","organizations":"^Intel Corporate|^Liteon|^AzureWave|^Realtek"}
 }
