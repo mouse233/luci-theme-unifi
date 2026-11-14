@@ -20,11 +20,13 @@ const rgb=key=>'rgb('+palette[key].hex.slice(1).match(/../g).map(v=>parseInt(v,1
   await page.getByLabel('客户端每页条数',{exact:true}).selectOption('25');
   await page.getByLabel('客户端自动刷新间隔',{exact:true}).selectOption('30');
   await page.getByLabel('默认展开导航栏',{exact:true}).check();
+  await page.getByLabel('启用客户端在线探测',{exact:true}).uncheck();
   await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'保存并应用',exact:true}).click()]);
   await page.getByLabel('外观模式',{exact:true}).waitFor();
   assert.equal(await page.locator('html').getAttribute('data-darkmode'),'true');
   assert.equal(await page.getByLabel('外观模式',{exact:true}).inputValue(),'dark');
   assert.equal(await page.getByLabel('仪表盘信息刷新间隔',{exact:true}).inputValue(),'5');
+  assert.equal(await page.getByLabel('启用客户端在线探测',{exact:true}).isChecked(),false);
   await page.screenshot({path:path.join(output,'settings-dark.png'),fullPage:true});
   await page.goto(base+'/?page=clients');await page.locator('tbody tr[data-client-id]').first().waitFor();
   assert.equal(await page.getByRole('combobox',{name:'每页条数'}).inputValue(),'25');

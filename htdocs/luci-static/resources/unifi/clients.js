@@ -14,7 +14,7 @@ function t(zh,en){return chinese?zh:en;}
 function node(tag,cls,content){return E(tag,{'class':cls||''},content==null?[]:content);}
 function rate(kbps){return kbps==null?'—':(kbps>=1000?(kbps/1000).toFixed(1)+' Mbps':kbps.toFixed(0)+' Kbps');}
 function ago(ms){return ms==null?'—':ms<1000?t('刚刚','Just now'):ms<60000?Math.floor(ms/1000)+t(' 秒前','s ago'):Math.floor(ms/60000)+t(' 分钟前','m ago');}
-function status(row){return {associated:t('已关联','Associated'),neighbor:t('邻居记录','Neighbor'),lease:t('租约有效','Valid lease'),static:t('静态配置','Reserved'),known:t('已知记录','Known')}[row.status];}
+function status(row){return {online:t('在线','Online'),offline:t('离线','Offline'),unknown:'—'}[row.status]||'—';}
 function name(row){return row.name||t('未知设备','Unknown device');}
 function identitySource(id){return id.source==='hostname'?t('主机名推测','Hostname hint'):id.source==='mac'?t('MAC 前缀匹配','MAC prefix match'):id.source==='virtual'?t('虚拟网卡前缀匹配','Virtual NIC prefix match'):t('未识别','Not identified');}
 function deviceType(type){return {phone:t('手机','Phone'),tablet:t('平板','Tablet'),computer:t('电脑','Computer'),tv:t('电视','TV'),printer:t('打印机','Printer'),camera:t('摄像头','Camera'),storage:t('存储设备','Storage'),speaker:t('音箱','Speaker'),game:t('游戏机','Game console'),network:t('网络设备','Network device'),watch:t('手表','Watch'),iot:t('智能设备','Smart device')}[type]||t('未知','Unknown');}
@@ -122,7 +122,7 @@ return baseclass.extend({
 		var nets=[];rows.forEach(function(r){r.networks.forEach(function(n){if(nets.indexOf(n)<0)nets.push(n);});});nets.sort();
 		if(JSON.stringify(nets)!==this.networkNames){this.refs.network.replaceChildren(E('option',{value:''},t('全部网络','All networks')));nets.forEach(L.bind(function(n){this.refs.network.appendChild(E('option',{value:n},n));},this));this.networkNames=JSON.stringify(nets);}
 		if(this.state.network&&nets.indexOf(this.state.network)<0)this.state.network='';this.refs.network.value=this.state.network;
-		this.refs.notice.textContent=data.unavailable&&data.unavailable.length?t('部分数据源不可用：','Some sources are unavailable: ')+data.unavailable.map(function(key){return {leases:'DHCP',hints:t('主机提示','Host hints'),arp:t('邻居记录','Neighbors'),statics:t('静态租约','Reservations'),wifi:t('无线关联','Wi-Fi associations'),devices:t('设备','Devices'),wans:t('上行网络','WAN networks'),networks:t('网络','Networks')}[key]||key;}).join(' · '):'';
+		this.refs.notice.textContent=data.unavailable&&data.unavailable.length?t('部分数据源不可用：','Some sources are unavailable: ')+data.unavailable.map(function(key){return {presence:t('在线状态','Online status'),leases:'DHCP',hints:t('主机提示','Host hints'),arp:t('邻居记录','Neighbors'),statics:t('静态租约','Reservations'),wifi:t('无线关联','Wi-Fi associations'),devices:t('设备','Devices'),wans:t('上行网络','WAN networks'),networks:t('网络','Networks')}[key]||key;}).join(' · '):'';
 		this.refs.updated.textContent=t('更新于 ','Updated ')+new Date().toLocaleTimeString(chinese?'zh-CN':undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'});
 		this.paint();if(this.currentId){var current=this.rows.find(L.bind(function(r){return r.id===this.currentId;},this));if(current)this.detail(current,false);else this.closeDetail();}
 	},
@@ -185,7 +185,7 @@ return baseclass.extend({
 		var self=this;
 		function section(title,fields){var box=node('section','uf-client-detail-section');box.appendChild(node('h3','',title));fields.forEach(function(f){box.appendChild(E('div',{'class':'uf-client-detail-pair'},[node('span','',f[0]),node('span','',f[1]==null?'—':String(f[1]))]));});self.refs.drawerContent.appendChild(box);}
 		section(t('设备识别','Device identification'),[[t('厂商','Vendor'),r.identity.name||t('未知','Unknown')],[t('识别依据','Identified by'),identitySource(r.identity)],[t('设备类型','Device type'),deviceType(r.identity.type)]]);
-		section(t('连接信息','Connection'),[[t('网络','Network'),this.value(r,'networks')],[t('连接','Connection'),this.value(r,'connection')],[t('接口','Interface'),r.device||'—'],[t('地址分配','Assignment'),this.value(r,'assignment')]]);
+		section(t('连接信息','Connection'),[[t('最后确认在线','Last confirmed online'),r.lastSeen?new Date(r.lastSeen*1000).toLocaleString():'—'],[t('网络','Network'),this.value(r,'networks')],[t('连接','Connection'),this.value(r,'connection')],[t('接口','Interface'),r.device||'—'],[t('地址分配','Assignment'),this.value(r,'assignment')]]);
 		section(t('网络地址','Addresses'),[['MAC',r.mac||'—'],['IPv4',r.ipv4.join(', ')||'—'],['IPv6',r.ipv6.join(', ')||'—'],[t('本地管理 MAC','Locally administered MAC'),r.mac?(r.localMac?t('是','Yes'):t('否','No')):'—']]);
 		if(r.associated)section(t('无线链路','Wi-Fi link'),[['SSID',r.ssid||'—'],[t('信号','Signal'),this.value(r,'signal')],[t('信道','Channel'),r.channel||'—'],[t('接收链路速率','RX link rate'),rate(r.rxRate)],[t('发送链路速率','TX link rate'),rate(r.txRate)],[t('最近活动','Last activity'),ago(r.inactive)]]);
 		section(t('记录来源','Record sources'),[[t('来源','Sources'),r.sources.map(sourceName).join(' · ')],[t('剩余租期','Lease remaining'),r.expires===-1?t('无限期','Unlimited'):r.expires==null?'—':r.expires>0?core.uptime(r.expires):t('已过期','Expired')]]);

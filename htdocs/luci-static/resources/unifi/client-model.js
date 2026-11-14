@@ -32,7 +32,7 @@ return baseclass.extend({
 			r.networks=r.networks.concat(array(s.networks));
 		});
 		var wanMacs=arp.filter(function(a){return wan.indexOf(a.device)>=0;}).map(function(a){return a.mac;});
-		return Object.keys(rows).map(function(id){var r=rows[id];r.ipv4=unique(r.ipv4);r.ipv6=unique(r.ipv6);r.networks=unique(r.networks);r.status=r.associated?'associated':r.neighbor?'neighbor':r.leaseValid?'lease':r.reserved?'static':'known';r.localMac=!!(r.mac&&(parseInt(r.mac.slice(0,2),16)&2));return r;}).filter(function(r){return wanMacs.indexOf(r.mac)<0||r.neighbor||r.associated||r.reserved||r.lease;});
+		return Object.keys(rows).map(function(id){var r=rows[id];r.ipv4=unique(r.ipv4);r.ipv6=unique(r.ipv6);r.networks=unique(r.networks);var presence=(data.presence||{})[r.mac]||{};r.status=presence.status==='online'||presence.status==='offline'?presence.status:'unknown';r.lastSeen=Number(presence.last_seen)>0?Number(presence.last_seen):null;r.localMac=!!(r.mac&&(parseInt(r.mac.slice(0,2),16)&2));return r;}).filter(function(r){return wanMacs.indexOf(r.mac)<0||r.neighbor||r.associated||r.reserved||r.lease;});
 	},
 	query:function(rows,state){
 		var search=String(state.search||'').trim().toLowerCase();

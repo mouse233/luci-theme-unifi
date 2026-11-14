@@ -12,6 +12,7 @@ var leases = rpc.declare({ object: 'luci-rpc', method: 'getDHCPLeases' });
 var hints = rpc.declare({ object: 'luci-rpc', method: 'getHostHints' });
 var dhcp = rpc.declare({ object: 'uci', method: 'get', params: ['config'], expect: { values: {} } });
 var pending = {};
+var presence = rpc.declare({ object: 'unifi.presence', method: 'list' });
 var activity = rpc.declare({ object: 'unifi.activity', method: 'history', params: ['device', 'since', 'id'] });
 var deviceStatus = rpc.declare({ object: 'network.device', method: 'status', params: ['name'] });
 
@@ -47,6 +48,7 @@ function collect(profile) {
 		}
 		else {
 			jobs.push(
+				read('presence', function() { return presence().then(function(r) { return r.devices || {}; }); }, {}),
 				read('hints', hints, {}),
 				read('arp', function() { return fs.read('/proc/net/arp'); }, ''),
 				read('statics', function() {

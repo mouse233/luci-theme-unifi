@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: Apache-2.0
+import { create_presence_state } from '../root/usr/share/unifi/presence-state.uc';
+function check(condition, label) { if (!condition) die('FAIL: ' + label + '\n'); }
+let s = create_presence_state();
+let a = s.get('a');
+check(a.status == 'unknown', 'initial state');
+s.evidence('a', 10, 1000);
+check(a.status == 'online' && a.next_probe == 70, 'positive evidence');
+let generation = a.generation;
+s.failure('a', 70, generation, true);
+check(a.status == 'online' && a.failures == 1 && a.next_probe == 130, 'first failure');
+s.failure('a', 130, generation, false);
+check(a.failures == 1, 'manual failure does not count');
+s.failure('a', 130, generation, true);
+check(a.status == 'online' && a.failures == 2, 'second failure');
+s.evidence('a', 150, 1140);
+s.failure('a', 151, generation, true);
+check(a.failures == 0 && a.status == 'online', 'stale failure ignored');
+generation = a.generation;
+s.failure('a', 210, generation, true);
+s.failure('a', 270, generation, true);
+s.failure('a', 330, generation, true);
+check(a.status == 'offline' && a.next_probe == 450, 'third failure and offline interval');
+s.evidence('a', 400, 1390);
+check(a.status == 'online' && a.failures == 0, 'recovery');
+generation = a.generation;
+s.reset('a');
+s.failure('a', 401, generation, true);
+check(s.get('a').status == 'unknown' && s.get('a').failures == 0, 'identity reset invalidates probes');
+print('presence state transitions passed\n');

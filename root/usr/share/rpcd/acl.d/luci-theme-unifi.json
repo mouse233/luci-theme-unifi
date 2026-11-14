@@ -42,8 +42,16 @@
   },
   "luci-theme-unifi-settings": {
     "description": "Read and save Unifi theme preferences",
-    "read": {"uci": ["unifi"]},
-    "write": {"uci": ["unifi"]}
+    "read": {
+      "uci": [
+        "unifi"
+      ]
+    },
+    "write": {
+      "uci": [
+        "unifi"
+      ]
+    }
   },
   "luci-theme-unifi-clients": {
     "description": "Read client inventory, reservations and Wi-Fi associations",
@@ -77,6 +85,9 @@
         ],
         "iwinfo": [
           "assoclist"
+        ],
+        "unifi.presence": [
+          "list"
         ]
       }
     }

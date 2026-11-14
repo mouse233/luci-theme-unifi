@@ -57,7 +57,7 @@ Architecture: all
 Maintainer: luci-theme-unifi contributors
 Section: luci
 Priority: optional
-Depends: luci-base, luci-theme-bootstrap, luci-mod-status, ucode-mod-uloop
+Depends: luci-base, luci-theme-bootstrap, luci-mod-status, ucode-mod-uloop, iputils-arping
 Installed-Size: {size}
 Description: Unifi LuCI theme with a read-only OpenWrt dashboard
 License: {license_name}

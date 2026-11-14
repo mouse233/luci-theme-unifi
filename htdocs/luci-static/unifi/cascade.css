@@ -211,3 +211,5 @@ html[data-darkmode=true] .uf-theme .uf-client-status.associated{color:var(--uf-g
 html[data-darkmode=true] .uf-theme .uf-badge-good{background:#19392c;color:#79d7a6;border-color:#345e49}
 html[data-darkmode=true] .uf-theme .uf-client-signal i{background:var(--uf-line-strong)}
 html[data-darkmode=true] .uf-theme .uf-client-signal i.lit{background:var(--uf-green)}
+
+.uf-client-status.online{color:#25875e}.uf-client-status.online:before{background:#32b17b}.uf-client-status.offline:before{background:#9eacbd}
