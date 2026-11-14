@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-14
+
 ### Added
 
 - Add optional background client online detection using validated ARP replies and recent network activity, with conservative offline thresholds and last-confirmed timestamps.
