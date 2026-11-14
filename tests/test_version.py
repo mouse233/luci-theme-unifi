@@ -67,11 +67,18 @@ class VersionTests(unittest.TestCase):
     def test_notes_are_specific_to_the_requested_release(self):
         content = '# Changelog\n\n## [Unreleased]\n\n- Later work.\n\n## [1.2.3] - 2026-01-01\n\n- Released change.\n\n## [1.2.2] - 2025-12-01\n\n- Earlier change.\n'
         self.assertEqual(release_notes(content, 'v1.2.3'), '- Released change.\n')
+        self.assertEqual(release_notes(content, 'v1.2.3', allow_unreleased=True), '- Released change.\n')
         for missing in ['v9.9.9', 'v1.2.3-rc.1']:
             with self.assertRaises(ValueError):
                 release_notes(content, missing)
         with self.assertRaises(ValueError):
             release_notes('## [1.2.3] - 2026-01-01\n\n## [1.2.2] - 2025-12-01\n- Previous\n', 'v1.2.3')
+        unreleased_only = '# Changelog\n\n## [Unreleased]\n\n- Pending release.\n\n## [1.2.2] - 2025-12-01\n\n- Earlier change.\n'
+        self.assertEqual(release_notes(unreleased_only, 'v1.2.3', allow_unreleased=True),
+                         '- Pending release.\n')
+        with self.assertRaises(ValueError):
+            release_notes('## [Unreleased]\n\n## [1.2.2] - 2025-12-01\n\n- Earlier change.\n',
+                          'v1.2.3', allow_unreleased=True)
 
 
 if __name__ == '__main__':
