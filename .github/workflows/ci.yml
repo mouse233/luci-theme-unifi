@@ -126,7 +126,7 @@ jobs:
           revision = re.search(r'^PKG_RELEASE:=(\d+)$', Path('Makefile').read_text(), re.M)[1]
           version = apk_version(resolve_version()['version']) + '-r' + revision
           metadata = Path('/tmp/apk-metadata').read_text()
-          assert f'  version: {version}\n' in metadata
+          assert re.search(r'^  version: (?:\|\n    )?' + re.escape(version) + r'$', metadata, re.M)
           assert Path(f'artifacts/packages/luci-theme-unifi-{version}.apk').is_file()
           PYTHON
       - name: Test APK installation and removal on ImmortalWrt 25.12.2
