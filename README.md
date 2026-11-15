@@ -29,7 +29,7 @@ A UniFi-inspired theme for OpenWrt and ImmortalWrt, with a live dashboard, clien
 
 **Tested on the 23.05 series** (ImmortalWrt 23.05.4). **Newer versions have not been tested.** Requires LuCI with ucode templates and the `opkg` package manager.
 
-Dependencies: `luci-base`, `luci-theme-bootstrap`, `luci-mod-status`, `ucode-mod-uloop`. The package manager installs these from your firmware's feeds.
+Dependencies: `luci-base`, `luci-theme-bootstrap`, `luci-mod-status`, `ucode-mod-uloop`, `iputils-arping`. The package manager installs these from your firmware's feeds.
 
 ## Installation
 
@@ -55,6 +55,43 @@ opkg remove luci-theme-unifi
 ```
 
 For backup and SSH recovery instructions, see the [development guide](docs/development.md#restore-or-uninstall).
+
+## How client presence is detected
+
+The background service combines the following evidence for IPv4 devices on a single LAN:
+
+```mermaid
+flowchart LR
+    A["LAN inventory<br/>update every 30s<br/>DHCP / static / ARP"] --> B["Kernel REACHABLE<br/>trust binding for 60s"]
+    A --> C["Trusted IP/MAC<br/>packet growth<br/>check every 10s"]
+    A --> D["Serial ARP probes<br/>schedule: 1s<br/>timeout: 2s"]
+    B --> E["Online; clear failures<br/>probe after 60s"]
+    C --> E
+    D -->|IP/MAC match; trust for 120s| E
+    D -->|3 consecutive timeouts; 60s apart| F["Offline<br/>retry after 120s"]
+```
+
+Devices start as unknown; leases or retained ARP entries alone do not prove liveness. Conflicting bindings are excluded, and command errors do not count as probe timeouts. Probe queues and new positive evidence can delay an offline decision.
+
+## Measured resource overhead
+
+Measured with **Intel N100 (QEMU VM, 4 vCPUs), ImmortalWrt 23.05.4**: three minutes of live network activity, about 1,500–2,500 connections and 33 tracked devices.
+
+| Background task | Average CPU use, one core |
+| --- | --- |
+| Network activity sampling, once per second | **0.09%** |
+| Client presence detection | **0.96%** |
+
+100% means one fully occupied CPU core. Together, the two tasks used about **0.26% of total four-core capacity**; actual usage varies with device and connection counts.
+
+Large JS assets were also measured: **10 runs with browser cache disabled**, downloaded from the router using **Apple M1 / Chrome 157**. Responses were uncompressed; the table shows medians for resource loading, excluding the rest of the page.
+
+| Asset | Size | Download + read text | Browser parsing/compilation |
+| --- | --- | --- | --- |
+| `vendor-data.js` | ~1.30 MB | **55.6 ms** | **6.6 ms** |
+| `icon-data.js` | ~239 kB | **10.8 ms** | **0.8 ms** |
+
+Browser parsing/compilation was measured on the Apple M1 client. Mobile browsers and complete first-page loading remain untested.
 
 ## Local preview and development
 
