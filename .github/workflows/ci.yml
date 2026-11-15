@@ -107,16 +107,16 @@ jobs:
           curl --fail --location --retry 3 -o /tmp/sdk.tar.zst "https://downloads.immortalwrt.org/releases/25.12.2/targets/x86/64/$sdk.tar.zst"
           echo '4d4631f134c2f27215a91aa7ef5bf9a01ea96c2450d3b8a5c38048c32462ac60  /tmp/sdk.tar.zst' | sha256sum --check
           mkdir -p /tmp/immortalwrt-sdk
-          tar --zstd -xf /tmp/sdk.tar.zst -C /tmp/immortalwrt-sdk --strip-components=4 "$sdk/staging_dir/host/bin/apk"
+          tar --zstd -xf /tmp/sdk.tar.zst -C /tmp/immortalwrt-sdk --strip-components=3 "$sdk/staging_dir/host/bin/apk" "$sdk/staging_dir/host/bin/.apk.bin" "$sdk/staging_dir/host/lib"
       - name: Build and inspect packages
         run: |
           python3 tools/build_package.py
-          python3 tools/build_apk.py --apk /tmp/immortalwrt-sdk/apk
-          /tmp/immortalwrt-sdk/apk adbdump artifacts/packages/*.apk > /tmp/apk-metadata
+          python3 tools/build_apk.py --apk /tmp/immortalwrt-sdk/bin/apk
+          /tmp/immortalwrt-sdk/bin/apk adbdump artifacts/packages/*.apk > /tmp/apk-metadata
           grep -Fx '  name: luci-theme-unifi' /tmp/apk-metadata
           grep -Fx '  arch: noarch' /tmp/apk-metadata
           grep -Fx '    - ucode-mod-uloop' /tmp/apk-metadata
-          test "$(/tmp/immortalwrt-sdk/apk version -t 1.2.3_alpha1114099046049-r1 1.2.3-r1)" = '<'
+          test "$(/tmp/immortalwrt-sdk/bin/apk version -t 1.2.3_alpha1114099046049-r1 1.2.3-r1)" = '<'
           python3 - <<'PYTHON'
           import re, sys
           from pathlib import Path
