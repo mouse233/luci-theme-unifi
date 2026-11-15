@@ -43,6 +43,8 @@ python3 tools/build_package.py
 
 本地打包器仅依赖 Python 标准库，收录静态资源、LuCI JavaScript 和 ucode 源码，不包含本机二进制。打包成功不代表已经通过目标固件 SDK 验证。
 
+使用 `python3 tools/build_apk.py --apk /path/to/immortalwrt-sdk/staging_dir/host/bin/apk` 构建 ImmortalWrt 25.12 APK。该工具使用与 IPK 相同的文件及安装脚本，并调用 ImmortalWrt 25.12.2 SDK 中的 Linux x86-64 `apk` 工具。
+
 ### 使用 OpenWrt SDK 或源码树
 
 将仓库放入 OpenWrt 源码树或 SDK 的 `package/luci-theme-unifi`，并确保 `feeds/luci` 已配置 LuCI feed。在构建配置中选择 `luci-theme-unifi`，随后从 SDK 或源码树根目录执行：
@@ -50,6 +52,12 @@ python3 tools/build_package.py
 ```sh
 make package/luci-theme-unifi/compile V=s
 ```
+
+在 ImmortalWrt 25.12 SDK 中，LuCI 构建规则会生成 `luci-theme-unifi-<version>.apk`；测试环境可使用 `apk add --allow-untrusted` 安装。SDK 构建不接受本项目默认的开发版本号，从未打标签或工作区有改动的源码构建时，请传入正式格式的 `PKG_VERSION`，例如 `make package/luci-theme-unifi/compile PKG_VERSION=1.0.2 V=s`。
+
+### 路由器容器检查
+
+兼容性也会通过 OrbStack 中的 ImmortalWrt x86-64 rootfs 镜像验证。导入 rootfs 压缩包，以 `/sbin/init` 和 `--privileged` 启动，并把容器地址直接配置到 `eth0`，不要保留固件默认的 `192.168.1.1` 网桥地址，否则映射的 HTTP 端口没有路由。将软件源指向可访问的镜像，安装软件包，设置 `luci.main.mediaurlbase=/luci-static/unifi`，再对映射端口运行带登录的 Playwright 检查。
 
 ### 运行测试
 
@@ -143,9 +151,9 @@ python3 tools/bundle_release.py
 
 ## 下载构建包
 
-Release 只提供可安装的 IPK。Actions 的 artifact 是 ZIP，解压后取出 IPK 即可；CI artifact 保留 30 天。
+CI 在 Actions 的 ZIP artifact 中提供 IPK 和 APK，保留 30 天。后续 Release 将包含两种格式；旧版本可能只有 IPK。APK 的开发版及预发布版本号会经过编码以满足 apk 语法；升级时请使用正式版。
 
-开发包的版本号低于正式版。如果需要用开发版替换已安装的正式版，请先切换到其他主题并卸载现有 Unifi 软件包，再安装开发版 IPK。
+开发包的版本号低于正式版。如果需要用开发版替换已安装的正式版，请先卸载现有 Unifi 软件包，再安装开发版 IPK。卸载时若正在使用 Unifi，会自动切换到 Bootstrap。1.0.1 及更早版本仍需先手动切换主题再卸载。
 
 ## 版本与发布
 
@@ -192,13 +200,13 @@ uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 uci commit luci
 ```
 
-切换离开 Unifi 后，如需卸载：
+如需卸载，执行以下命令；正在使用 Unifi 时会自动切换到 Bootstrap，已选择其他主题时则保留原选择：
 
 ```sh
 opkg remove luci-theme-unifi
 ```
 
-卸载检查会阻止直接删除正在使用的主题。切换主题不需要重启路由器或网络。
+升级会保留当前主题。1.0.1 及更早版本已安装的卸载脚本会拦截正在使用 Unifi 时的升级和卸载，替换这些旧版本前仍需手动切换一次主题。切换主题不需要重启路由器或网络。
 
 ## 主题设置
 

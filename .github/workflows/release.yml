@@ -58,7 +58,7 @@ jobs:
         with:
           name: luci-theme-unifi-${{ github.sha }}
           path: artifacts/packages
-      - name: Match the IPK version to the release tag
+      - name: Match package versions to the release tag
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
@@ -71,6 +71,7 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, 'tools')
           from version import resolve_version
+          from build_apk import apk_version
           expected = resolve_version(tag=os.environ['RELEASE_TAG'])
           revision = re.search(r'^PKG_RELEASE:=(\d+)$', Path('Makefile').read_text(), re.M)[1]
           version = expected['version'] + '-' + revision
@@ -84,6 +85,9 @@ jobs:
           assert re.search(r'^Package: luci-theme-unifi$', metadata, re.M)
           assert re.search(r'^Version: ' + re.escape(version) + '$', metadata, re.M)
           assert re.search(r'^Architecture: all$', metadata, re.M)
+          apks = list(Path('artifacts/packages').glob('*.apk'))
+          assert len(apks) == 1
+          assert apks[0].name == f"luci-theme-unifi-{apk_version(expected['version'])}-r{revision}.apk"
           PYTHON
       - name: Publish GitHub Release
         env:
@@ -93,7 +97,7 @@ jobs:
         run: |
           flags=()
           if [[ "$RELEASE_TAG" == *-* ]]; then flags+=(--prerelease); fi
-          assets=(artifacts/packages/*.ipk)
+          assets=(artifacts/packages/*.ipk artifacts/packages/*.apk)
           if gh release view "$RELEASE_TAG" --json tagName > /dev/null 2>&1; then
             gh release upload "$RELEASE_TAG" "${assets[@]}" --clobber
             if [[ -z "$(gh release view "$RELEASE_TAG" --json body --jq '.body')" ]]; then

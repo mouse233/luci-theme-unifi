@@ -27,14 +27,17 @@ A UniFi-inspired theme for OpenWrt and ImmortalWrt, with a live dashboard, clien
 
 ## Compatibility
 
-**Tested on the 23.05 series** (ImmortalWrt 23.05.4). **Newer versions have not been tested.** Requires LuCI with ucode templates and the `opkg` package manager.
+Tested on ImmortalWrt 23.05.4, 24.10.6, and 25.12.2 with LuCI ucode templates.
+
+- **23.05 and 24.10** use `opkg`; install the IPK below.
+- **25.12** uses `apk`. Use the APK produced by CI and upcoming releases. Installation, upgrade, removal, templates, services, and browser page loading were checked on 25.12.2 in an x86-64 container.
 
 Dependencies: `luci-base`, `luci-theme-bootstrap`, `luci-mod-status`, `ucode-mod-uloop`, `iputils-arping`. The package manager installs these from your firmware's feeds.
 
 ## Installation
 
-1. Download `luci-theme-unifi_…_all.ipk` from [Releases](https://github.com/mouse233/luci-theme-unifi/releases). For a development build, open a successful [Actions → CI](https://github.com/mouse233/luci-theme-unifi/actions/workflows/ci.yml) run, download its `luci-theme-unifi-…` artifact, and extract the IPK.
-2. Upload the IPK to the router's `/tmp/` directory.
+1. Download the IPK (23.05/24.10) or APK (25.12) from [Releases](https://github.com/mouse233/luci-theme-unifi/releases). For a development build, open a successful [Actions → CI](https://github.com/mouse233/luci-theme-unifi/actions/workflows/ci.yml) run, download its `luci-theme-unifi-…` artifact, and extract the appropriate package.
+2. Upload the package to the router's `/tmp/` directory.
 3. Run over SSH on the router:
 
 ```sh
@@ -42,17 +45,21 @@ opkg update
 opkg install /tmp/luci-theme-unifi_*.ipk
 ```
 
+On ImmortalWrt 25.12, run `apk update` and `apk add --allow-untrusted /tmp/luci-theme-unifi-*.apk` instead. Existing releases may only contain IPK files; APKs are available from CI until the next release.
+
 In **System → System → Language and Style**, select **Unifi**, then save and apply. Installation itself does not switch your active theme.
 
 Open **System → Unifi Theme Settings** to adjust appearance, refresh intervals, pagination, and navigation. **Always sample network activity** is enabled by default and keeps collecting while the dashboard is closed; history stays in memory and clears when the collector or router restarts.
 
-**Upgrading:** switch to another theme before installing the replacement package, then select Unifi again. Settings in `/etc/config/unifi` are preserved during normal upgrades.
+**Upgrading:** install the replacement package directly; the active theme and settings in `/etc/config/unifi` are preserved. When upgrading from 1.0.1 or earlier, switch to another theme once before installing, then select Unifi again: those versions' installed removal scripts block upgrades while Unifi is active.
 
-**Uninstalling:** select another theme first, then run:
+**Uninstalling:** run the following command. If Unifi is active, removal automatically selects Bootstrap. With 1.0.1 or earlier, select another theme first.
 
 ```sh
 opkg remove luci-theme-unifi
 ```
+
+On ImmortalWrt 25.12, replace the command with `apk del luci-theme-unifi`.
 
 For backup and SSH recovery instructions, see the [development guide](docs/development.md#restore-or-uninstall).
 

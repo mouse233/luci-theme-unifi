@@ -43,6 +43,8 @@ Output is written to the ignored `artifacts/packages/` directory:
 
 The local builder needs only the Python standard library. It packages static assets, LuCI JavaScript, and ucode source, with no host binaries. It does not replace validation against a matching OpenWrt SDK.
 
+Build an APK for ImmortalWrt 25.12 with `python3 tools/build_apk.py --apk /path/to/immortalwrt-sdk/staging_dir/host/bin/apk`. This uses the same payload and hooks as the IPK and the Linux x86-64 `apk` tool from the ImmortalWrt 25.12.2 SDK.
+
 ### Build with an OpenWrt SDK or source tree
 
 Place this repository at `package/luci-theme-unifi` inside an OpenWrt source tree or SDK with the LuCI feed configured at `feeds/luci`. Select `luci-theme-unifi` in the build configuration, then run from the SDK or source tree root:
@@ -50,6 +52,12 @@ Place this repository at `package/luci-theme-unifi` inside an OpenWrt source tre
 ```sh
 make package/luci-theme-unifi/compile V=s
 ```
+
+On an ImmortalWrt 25.12 SDK, LuCI's build rules produce `luci-theme-unifi-<version>.apk`; install it in a test environment with `apk add --allow-untrusted`. The SDK build does not accept this project’s default development version, so for an untagged or dirty tree pass a release-form `PKG_VERSION`, for example `make package/luci-theme-unifi/compile PKG_VERSION=1.0.2 V=s`.
+
+### Router container checks
+
+Compatibility is also checked against ImmortalWrt x86-64 rootfs images under OrbStack. Import the rootfs tarball, start it with `/sbin/init` and `--privileged`, and assign the container address directly to `eth0` instead of the firmware's default bridged `192.168.1.1`; otherwise the published HTTP port has no route. Point the package feeds at a reachable mirror, install the package, set `luci.main.mediaurlbase=/luci-static/unifi`, then run an authenticated Playwright check against the published port.
 
 ### Run tests
 
@@ -143,9 +151,9 @@ Keep changes focused and run the relevant checks. Changes to shared controls or 
 
 ## Download build artifacts
 
-Releases provide only the installable IPK. Extract the Actions artifact ZIP to get the IPK; CI artifacts are retained for 30 days.
+CI produces an IPK and an APK in the Actions artifact ZIP, retained for 30 days. Future releases include both; older releases may only contain an IPK. APK development and prerelease versions are encoded to satisfy apk version syntax; use release builds for upgrades.
 
-Development package versions sort below tagged releases. To replace an installed release with a development build, switch to another theme and remove the existing Unifi package before installing the development IPK.
+Development package versions sort below tagged releases. To replace an installed release with a development build, remove the existing Unifi package before installing the development IPK. Removal selects Bootstrap if Unifi is active. With 1.0.1 or earlier, switch to another theme manually before removing the package.
 
 ## Versions and releases
 
@@ -192,13 +200,13 @@ uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 uci commit luci
 ```
 
-After switching away from Unifi, remove it if desired:
+To uninstall, run the following command. Removal automatically selects Bootstrap if Unifi is active, and preserves any other selected theme:
 
 ```sh
 opkg remove luci-theme-unifi
 ```
 
-The uninstall guard refuses to remove the theme while it is active. A router or network restart is not required for theme switching.
+Upgrades preserve the active theme. Versions 1.0.1 and earlier have an installed removal script that blocks both upgrades and removals while Unifi is active; switch themes manually once before replacing those versions. A router or network restart is not required for theme switching.
 
 ## Theme settings
 

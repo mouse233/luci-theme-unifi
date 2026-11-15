@@ -27,14 +27,17 @@
 
 ## 兼容性
 
-**23.05 系列已测试通过**（实测 ImmortalWrt 23.05.4），**更高版本待测试**。需要使用 ucode 模板的 LuCI 和 `opkg` 包管理器。
+已在使用 ucode 模板的 LuCI 上测试 ImmortalWrt 23.05.4、24.10.6 和 25.12.2。
+
+- **23.05、24.10** 使用 `opkg`，安装下方 IPK。
+- **25.12** 使用 `apk`。使用 CI 和后续 Release 构建的 APK。已在 25.12.2 x86-64 容器中检查安装、升级、卸载、模板、服务及浏览器页面加载。
 
 依赖：`luci-base`、`luci-theme-bootstrap`、`luci-mod-status`、`ucode-mod-uloop`、`iputils-arping`，安装时由包管理器从固件软件源获取。
 
 ## 安装
 
-1. 从 [Releases](https://github.com/mouse233/luci-theme-unifi/releases) 下载发布版本的 `luci-theme-unifi_…_all.ipk`。开发版可在 [Actions → CI](https://github.com/mouse233/luci-theme-unifi/actions/workflows/ci.yml) 的成功运行中下载 `luci-theme-unifi-…` artifact，解压后取出 IPK。
-2. 将 IPK 上传至路由器 `/tmp/`。
+1. 从 [Releases](https://github.com/mouse233/luci-theme-unifi/releases) 下载 IPK（23.05/24.10）或 APK（25.12）。开发版可在 [Actions → CI](https://github.com/mouse233/luci-theme-unifi/actions/workflows/ci.yml) 的成功运行中下载 `luci-theme-unifi-…` artifact，解压后取出对应软件包。
+2. 将软件包上传至路由器 `/tmp/`。
 3. 通过 SSH 在路由器上执行：
 
 ```sh
@@ -42,17 +45,21 @@ opkg update
 opkg install /tmp/luci-theme-unifi_*.ipk
 ```
 
+ImmortalWrt 25.12 改为执行 `apk update` 和 `apk add --allow-untrusted /tmp/luci-theme-unifi-*.apk`。已有 Release 可能只有 IPK；在下一个 Release 前可从 CI 获取 APK。
+
 在 **系统 → 系统 → 语言和界面** 中选择 **Unifi**，保存并应用。安装主题不会自动切换当前外观。
 
 在 **系统 → Unifi 主题设置** 中调整外观、刷新间隔、分页和导航栏。“总是采样网络活动”默认开启，关闭仪表盘仍会采集；历史仅保存在内存中，路由器或采集服务重启后清空。
 
-**升级**：先切换到其他主题，再安装新版本，完成后重新选择 Unifi。正常升级会保留 `/etc/config/unifi` 中的设置。
+**升级**：直接安装新版本，保留当前主题及 `/etc/config/unifi` 中的设置。从 1.0.1 及更早版本升级时，需要先切换一次其他主题，安装后再选回 Unifi；这些旧版已安装的卸载脚本会拦截正在使用 Unifi 时的升级。
 
-**卸载**：先切换到其他主题，再执行：
+**卸载**：执行以下命令；如果正在使用 Unifi，会自动切换到 Bootstrap。1.0.1 及更早版本仍需先手动切换主题。
 
 ```sh
 opkg remove luci-theme-unifi
 ```
+
+ImmortalWrt 25.12 使用 `apk del luci-theme-unifi`。
 
 备份及通过 SSH 恢复主题的方法见[开发指南](development.zh-CN.md#恢复与卸载)。
 

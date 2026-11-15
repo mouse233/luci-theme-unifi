@@ -92,7 +92,7 @@ jobs:
   package:
     needs: [unit, browser]
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -101,11 +101,55 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: '3.11'
-      - name: Build IPK
-        run: python3 tools/build_package.py
+      - name: Download and verify ImmortalWrt 25.12.2 SDK
+        run: |
+          sdk=immortalwrt-sdk-25.12.2-x86-64_gcc-14.3.0_musl.Linux-x86_64
+          curl --fail --location --retry 3 -o /tmp/sdk.tar.zst "https://downloads.immortalwrt.org/releases/25.12.2/targets/x86/64/$sdk.tar.zst"
+          echo '4d4631f134c2f27215a91aa7ef5bf9a01ea96c2450d3b8a5c38048c32462ac60  /tmp/sdk.tar.zst' | sha256sum --check
+          mkdir -p /tmp/immortalwrt-sdk
+          tar --zstd -xf /tmp/sdk.tar.zst -C /tmp/immortalwrt-sdk --strip-components=4 "$sdk/staging_dir/host/bin/apk"
+      - name: Build and inspect packages
+        run: |
+          python3 tools/build_package.py
+          python3 tools/build_apk.py --apk /tmp/immortalwrt-sdk/apk
+          /tmp/immortalwrt-sdk/apk adbdump artifacts/packages/*.apk > /tmp/apk-metadata
+          grep -Fx '  name: luci-theme-unifi' /tmp/apk-metadata
+          grep -Fx '  arch: noarch' /tmp/apk-metadata
+          grep -Fx '    - ucode-mod-uloop' /tmp/apk-metadata
+          python3 - <<'PYTHON'
+          import re, sys
+          from pathlib import Path
+          sys.path.insert(0, 'tools')
+          from build_apk import apk_version
+          from version import resolve_version
+          revision = re.search(r'^PKG_RELEASE:=(\d+)$', Path('Makefile').read_text(), re.M)[1]
+          version = apk_version(resolve_version()['version']) + '-r' + revision
+          metadata = Path('/tmp/apk-metadata').read_text()
+          assert f'  version: {version}\n' in metadata
+          assert Path(f'artifacts/packages/luci-theme-unifi-{version}.apk').is_file()
+          PYTHON
+      - name: Test APK installation and removal on ImmortalWrt 25.12.2
+        run: |
+          curl --fail --location --retry 3 -o /tmp/rootfs.tar.gz https://downloads.immortalwrt.org/releases/25.12.2/targets/x86/64/immortalwrt-25.12.2-x86-64-rootfs.tar.gz
+          echo '29b6a86c9bc14a10dc1769f0c4afe33092ce669f667a5b7636d25271aff6a3cb  /tmp/rootfs.tar.gz' | sha256sum --check
+          docker import /tmp/rootfs.tar.gz unifi-immortalwrt:25.12.2
+          docker run --rm -v "$PWD/artifacts/packages:/packages:ro" --entrypoint /bin/sh unifi-immortalwrt:25.12.2 -c '
+            set -e
+            mkdir -p /var/lock
+            sed -i "s@https://mirrors.vsean.net/immortalwrt@https://downloads.immortalwrt.org@g" /etc/apk/repositories.d/*
+            apk update
+            apk add --allow-untrusted /packages/*.apk
+            test "$(uci -q get luci.themes.Unifi)" = /luci-static/unifi
+            uci set luci.main.mediaurlbase=/luci-static/unifi
+            uci commit luci
+            apk del luci-theme-unifi
+            test "$(uci -q get luci.main.mediaurlbase)" = /luci-static/bootstrap
+          '
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: luci-theme-unifi-${{ github.sha }}
-          path: artifacts/packages/*.ipk
+          path: |
+            artifacts/packages/*.ipk
+            artifacts/packages/*.apk
           if-no-files-found: error
           retention-days: 30
