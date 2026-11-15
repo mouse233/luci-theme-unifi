@@ -116,6 +116,7 @@ jobs:
           grep -Fx '  name: luci-theme-unifi' /tmp/apk-metadata
           grep -Fx '  arch: noarch' /tmp/apk-metadata
           grep -Fx '    - ucode-mod-uloop' /tmp/apk-metadata
+          test "$(/tmp/immortalwrt-sdk/apk version -t 1.2.3_alpha1114099046049-r1 1.2.3-r1)" = '<'
           python3 - <<'PYTHON'
           import re, sys
           from pathlib import Path

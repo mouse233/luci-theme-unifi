@@ -63,8 +63,8 @@ class ApkVersionTests(unittest.TestCase):
     def test_apk_versions_preserve_release_and_encode_other_versions(self):
         from build_apk import apk_version
         self.assertEqual(apk_version('1.2.3'), '1.2.3')
-        self.assertEqual(apk_version('1.2.3~rc.1'), '1.2.3~72632e31')
-        self.assertEqual(apk_version('0~dev'), '0.0.0~307e646576')
+        self.assertEqual(apk_version('1.2.3~rc.1'), '1.2.3_alpha1114099046049')
+        self.assertEqual(apk_version('0~dev'), '0.0.0_alpha1048126100101118')
         self.assertNotEqual(apk_version('0~git123.abcdef'),
                             apk_version('0~git123.abcdef+dirty'))
 

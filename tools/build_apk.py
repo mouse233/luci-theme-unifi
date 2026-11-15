@@ -67,11 +67,14 @@ def deinstall_text(prerm):
 
 
 def apk_version(version):
-    """Map IPK versions to apk's version grammar without losing identity."""
+    """Encode non-release versions as apk prereleases below the final release."""
     match = re.fullmatch(r'(\d+\.\d+\.\d+)(?:~([0-9A-Za-z.-]+))?', version)
-    if match:
-        return match[1] + ('~' + match[2].encode().hex() if match[2] else '')
-    return '0.0.0~' + version.encode().hex()
+    if match and not match[2]:
+        return match[1]
+    base, suffix = (match[1], match[2]) if match else ('0.0.0', version)
+    # A decimal byte encoding keeps different source versions distinguishable.
+    encoded = '1' + ''.join(f'{byte:03d}' for byte in suffix.encode())
+    return base + '_alpha' + encoded
 
 
 def main():
