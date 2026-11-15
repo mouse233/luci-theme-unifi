@@ -107,8 +107,15 @@ python3 tools/preview_server.py
 
 ## 许可与致谢
 
-原创代码采用 [Apache-2.0](../LICENSE) 许可。感谢 LuCI Bootstrap、Inter、Simple Icons 和 IEEE Registration Authority 提供模板、字体、图标及 MAC 前缀数据。
+原创代码采用 [Apache-2.0](../LICENSE) 许可。
 
-第三方素材保留各自的许可与权利：[Inter / OFL](../htdocs/luci-static/unifi/fonts/LICENSE.txt)、[Simple Icons / CC0](../root/usr/share/licenses/luci-theme-unifi/Simple-Icons-CC0.txt)、[UniFi 字标权利说明](../htdocs/luci-static/unifi/login-wordmark.NOTICE)。
+感谢以下项目与数据来源，第三方素材保留各自的许可与权利：
+
+- LuCI Bootstrap（模板）：[项目仓库](https://github.com/openwrt/luci/tree/master/themes/luci-theme-bootstrap)
+- Inter（字体）：[项目主页](https://rsms.me/inter/) · [OFL 许可](../htdocs/luci-static/unifi/fonts/LICENSE.txt)
+- Simple Icons（图标）：[项目主页](https://simpleicons.org/) · [CC0 许可](../root/usr/share/licenses/luci-theme-unifi/Simple-Icons-CC0.txt)
+- IEEE Registration Authority（MAC 前缀数据）：[官方网站](https://standards.ieee.org/products-programs/regauth/)
+
+UniFi 字标：[权利说明](../htdocs/luci-static/unifi/login-wordmark.NOTICE)。
 
 UniFi 为 Ubiquiti Inc. 的商标。本项目为独立社区主题，与 Ubiquiti、OpenWrt 或 ImmortalWrt 无隶属关系。

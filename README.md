@@ -107,8 +107,15 @@ See the [development guide](docs/development.md) for local packaging, SDK builds
 
 ## License and credits
 
-Original code is licensed under [Apache-2.0](LICENSE). Thanks to LuCI Bootstrap, Inter, Simple Icons, and the IEEE Registration Authority for templates, fonts, icons, and MAC prefix data.
+Original code is licensed under [Apache-2.0](LICENSE).
 
-Third-party assets retain their own terms: [Inter / OFL](htdocs/luci-static/unifi/fonts/LICENSE.txt), [Simple Icons / CC0](root/usr/share/licenses/luci-theme-unifi/Simple-Icons-CC0.txt), and the [UniFi wordmark rights notice](htdocs/luci-static/unifi/login-wordmark.NOTICE).
+Thanks to the following projects and data sources. Third-party assets retain their own terms:
+
+- LuCI Bootstrap (templates): [Source](https://github.com/openwrt/luci/tree/master/themes/luci-theme-bootstrap)
+- Inter (fonts): [Website](https://rsms.me/inter/) · [OFL license](htdocs/luci-static/unifi/fonts/LICENSE.txt)
+- Simple Icons (icons): [Website](https://simpleicons.org/) · [CC0 license](root/usr/share/licenses/luci-theme-unifi/Simple-Icons-CC0.txt)
+- IEEE Registration Authority (MAC prefix data): [Website](https://standards.ieee.org/products-programs/regauth/)
+
+UniFi wordmark: [Rights notice](htdocs/luci-static/unifi/login-wordmark.NOTICE).
 
 UniFi is a trademark of Ubiquiti Inc. This is an independent community theme, unaffiliated with Ubiquiti, OpenWrt, or ImmortalWrt.
