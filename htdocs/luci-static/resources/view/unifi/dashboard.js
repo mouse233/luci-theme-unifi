@@ -6,6 +6,14 @@
 return view.extend({
 	render: function() {
 		this.destroy();
+		// The menu entry exists for every theme and, as the first admin entry, is the
+		// page shown after login. Its styles ship with the Unifi theme only, so other
+		// themes keep LuCI's own overview as their start page.
+		if (!document.body.classList.contains('uf-theme')) {
+			var overview = L.url('admin', 'status', 'overview');
+			window.location.replace(overview);
+			return E('p', {}, [E('a', { 'href': overview }, [_('Status')])]);
+		}
 		this.host = E('div', { 'class': 'uf-dashboard-host' });
 		this.onHide = L.bind(this.deactivate, this);
 		this.onShow = L.bind(function(ev) {

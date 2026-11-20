@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'htdocs/luci-static/resources/unifi/core.js'), 'utf8');
 const core = new Function('baseclass', source)({extend:o=>o});
 test('every shipped JavaScript module parses through the LuCI-style loader', () => {
-  for (const name of ['menu-unifi.js','unifi/core.js','unifi/icons.js','unifi/data.js','unifi/brands.js','unifi/vendor-data.js','unifi/brand-map.js','unifi/icon-data.js','unifi/theme.js','unifi/overview.js','unifi/client-model.js','unifi/clients.js','view/unifi/dashboard.js','view/unifi/clients.js','unifi/settings.js','view/unifi/settings.js'])
+  for (const name of ['menu-unifi.js','unifi/core.js','unifi/icons.js','unifi/data.js','unifi/brands.js','unifi/vendor-data.js','unifi/brand-map.js','unifi/icon-data.js','unifi/theme.js','unifi/menu-fallback.js','unifi/overview.js','unifi/client-model.js','unifi/clients.js','view/unifi/dashboard.js','view/unifi/clients.js','unifi/settings.js','view/unifi/settings.js'])
     assert.doesNotThrow(()=>new Function(fs.readFileSync(path.join(root,'htdocs/luci-static/resources',name),'utf8')));
   assert.doesNotThrow(()=>new Function(fs.readFileSync(path.join(root,'preview/app.js'),'utf8')));
   assert.doesNotThrow(()=>new Function(fs.readFileSync(path.join(root,'preview/client-fixtures.js'),'utf8')));

@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Security
+
+- Render client-supplied hostnames and other network labels as plain text in the dashboard and client inventory to prevent stored cross-site scripting.
+
+### Fixed
+
+- Open the native LuCI overview when another theme is active and show fallback links when the UniFi menu fails to load.
+- Restore page titles and per-page stylesheets declared by LuCI menu entries.
+- Resume automatic and manual refresh in the client inventory after a browser back or forward navigation restores it from cache.
+- Find the OpenWrt `ip` command for kernel neighbor checks, back off inconclusive ARP probes, and discard stale client presence when devices leave the inventory or the LAN becomes unavailable.
+- Display ampersands correctly in IEEE manufacturer names.
+
 ## [1.1.1] - 2026-11-15
 
 ### Changed

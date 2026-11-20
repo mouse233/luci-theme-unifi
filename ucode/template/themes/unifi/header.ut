@@ -24,7 +24,7 @@
 <html lang="{{ dispatcher.lang }}" data-uf-mode="{{ mode }}" data-darkmode="{{ mode == 'dark' ? 'true' : 'false' }}" data-uf-page-size="{{ page_size }}" data-uf-client-refresh="{{ client_refresh }}" data-uf-dashboard-refresh="{{ dashboard_refresh }}" data-uf-nav-expanded="{{ prefs.nav_expanded == '1' ? '1' : '0' }}" data-uf-activity-always="{{ activity_always }}">
 	<head>
 		<meta charset="utf-8">
-		<title>{{ striptags(`${boardinfo.hostname ?? '?'}${node ? ` - ${node.title}` : ''}`) }} - LuCI</title>
+		<title>{{ striptags(`${boardinfo.hostname ?? '?'}${dispatched?.title ? ` - ${_(dispatched.title)}` : ''}`) }} - LuCI</title>
 		<script src="{{ media }}/appearance.js{# ?v=PKG_VERSION #}"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="{{ media }}/cascade.css{# ?v=PKG_VERSION #}">
@@ -36,8 +36,8 @@
 		<link rel="stylesheet" href="{{ media }}/login.css{# ?v=PKG_VERSION #}">
 		{% endif %}
 		<link rel="icon" href="{{ media }}/logo.svg" type="image/svg+xml">
-		{% if (node?.css): %}
-		<link rel="stylesheet" href="{{ resource }}/{{ node.css }}">
+		{% if (dispatched?.css): %}
+		<link rel="stylesheet" href="{{ resource }}/{{ dispatched.css }}">
 		{% endif %}
 		{% if (css): %}
 		<style title="text/css">{{ css }}</style>
@@ -46,7 +46,7 @@
 		<script src="{{ resource }}/cbi.js"></script>
 	</head>
 
-	<body class="uf-theme {{ blank_page ? 'uf-login' : '' }} lang_{{ dispatcher.lang }} {{ entityencode(striptags(node?.title ?? ''), true) }}" data-page="{{ entityencode(join('-', ctx.request_path), true) }}">
+	<body class="uf-theme {{ blank_page ? 'uf-login' : '' }} lang_{{ dispatcher.lang }}" data-page="{{ entityencode(join('-', ctx.request_path), true) }}">
 		{% if (!blank_page): %}
 		<header>
 			<a class="brand" href="{{ dispatcher.build_url('admin/unifi-dashboard') }}"><img src="{{ media }}/logo.svg" alt=""><span>{{ striptags(boardinfo.hostname ?? 'OpenWrt') }}</span></a>

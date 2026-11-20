@@ -10,7 +10,9 @@
 
 var zh = /^zh/.test(document.documentElement.lang || navigator.language);
 function t(cn, en) { return zh ? cn : en; }
-function el(tag, cls, text) { return E(tag, { 'class': cls || '' }, text == null ? [] : String(text)); }
+// LuCI's E() parses a lone string child as HTML; wrap text in an array
+// so lease host names and interface names are always inserted as text nodes.
+function el(tag, cls, text) { return E(tag, { 'class': cls || '' }, text == null ? [] : [String(text)]); }
 function pair(label, value) { return E('div', { 'class': 'uf-kv' }, [el('span', '', label), el('span', 'uf-value', value)]); }
 function svgNode(tag, attrs) {
 	var n = document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -186,7 +188,7 @@ return baseclass.extend({
 		var wan=data.wans[0], wanDevice=wan&&wan.getL3Device();
 		if(!this.selected)this.selected=wanDevice?wanDevice.getName():(devices[0]&&devices[0].getName());
 		var options=devices.map(function(d){return d.getName();});if(wanDevice&&options.indexOf(wanDevice.getName())<0)options.push(wanDevice.getName());
-		if(JSON.stringify(options)!==this.optionNames){this.refs.deviceSelect.replaceChildren();options.forEach(L.bind(function(name){this.refs.deviceSelect.appendChild(E('option',{'value':name},name));},this));this.optionNames=JSON.stringify(options);}
+		if(JSON.stringify(options)!==this.optionNames){this.refs.deviceSelect.replaceChildren();options.forEach(L.bind(function(name){this.refs.deviceSelect.appendChild(E('option',{'value':name},[name]));},this));this.optionNames=JSON.stringify(options);}
 		this.refs.deviceSelect.value=this.selected||'';
 		var now=Date.now();
 		var cpu=core.cpuUsage(this.previousCPU,data.cpu);this.previousCPU=data.cpu;

@@ -78,7 +78,7 @@ flowchart LR
     D -->|3 consecutive timeouts; 60s apart| F["Offline<br/>retry after 120s"]
 ```
 
-Devices start as unknown; leases or retained ARP entries alone do not prove liveness. Conflicting bindings are excluded, and command errors do not count as probe timeouts. Probe queues and new positive evidence can delay an offline decision.
+Devices start as unknown; leases or retained ARP entries alone do not prove liveness. Conflicting bindings are excluded, and command errors do not count as probe timeouts. Probe queues and new positive evidence can delay an offline decision. The kernel REACHABLE check needs an `ip` command (`ip-tiny`, `ip-full` or the BusyBox applet at `/sbin/ip`); without one, liveness comes from ARP probes alone.
 
 ## Measured resource overhead
 

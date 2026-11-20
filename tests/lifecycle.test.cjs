@@ -92,12 +92,14 @@ function viewFixture(options = {}) {
   const classes = new Set(), listeners = new Map();
   const {dashboard, host, active} = dashboardFixture(options.collect);
   host.replaceChildren = function() {this.children = [];};
-  const document = {body: {classList: {add: name => classes.add(name), remove: name => classes.delete(name)}}};
-  const window = {addEventListener: (name, fn) => listeners.set(name, fn), removeEventListener: name => listeners.delete(name)};
+  const theme = options.theme === undefined ? true : options.theme, redirects = [];
+  const document = {body: {classList: {add: name => classes.add(name), remove: name => classes.delete(name), contains: name => (theme && name === 'uf-theme') || classes.has(name)}}};
+  const window = {addEventListener: (name, fn) => listeners.set(name, fn), removeEventListener: name => listeners.delete(name), location: {replace: url => redirects.push(url)}};
   const source = fs.readFileSync(path.join(base, 'view/unifi/dashboard.js'), 'utf8');
-  const view = new Function('view', 'dashboard', 'L', 'window', 'document', 'E', source)(
-    {extend: x => x}, dashboard, {bind}, window, document, () => host);
-  return {view, dashboard, host, active, classes, listeners};
+  const view = new Function('view', 'dashboard', 'L', 'window', 'document', 'E', '_', source)(
+    {extend: x => x}, dashboard, {bind, url: (...parts) => '/cgi-bin/luci/' + parts.join('/')}, window, document,
+    options.E || (() => host), s => s);
+  return {view, dashboard, host, active, classes, listeners, redirects};
 }
 
 test('standalone dashboard renders in its own host and cleans up on destroy', async () => {
@@ -128,6 +130,14 @@ test('pagehide cancels pending render; persisted pageshow remounts exactly one p
   f.view.destroy();
 });
 
+test('other themes keep LuCI overview as the start page instead of an unstyled dashboard', async () => {
+  const f = viewFixture({theme: false, E: (tag, attrs, children) => ({tag, attrs, children})});
+  const placeholder = await f.view.render();
+  assert.deepEqual(f.redirects, ['/cgi-bin/luci/admin/status/overview']);
+  assert.equal(placeholder.tag, 'p');
+  assert.equal(f.active.size, 0); assert.equal(f.classes.size, 0); assert.equal(f.listeners.size, 0);
+});
+
 test('theme startup on native pages loads navigation only, even when menu loading fails', async () => {
   for (const fail of [false, true]) {
     const requested = [], classes = new Set();
@@ -135,7 +145,7 @@ test('theme startup on native pages loads navigation only, even when menu loadin
       {extend: x => x}, {require: name => {requested.push(name);return fail ? Promise.reject(new Error('menu failed')) : Promise.resolve({});}},
       {body: {classList: {add: name => classes.add(name)}}}, {warn() {}});
     theme.__init__(); await theme.ready;
-    assert.deepEqual(requested, ['menu-unifi']);
+    assert.deepEqual(requested, fail ? ['menu-unifi', 'unifi.menu-fallback'] : ['menu-unifi']);
     assert.equal(classes.has('uf-menu-failed'), fail);
   }
 });

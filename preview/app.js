@@ -8,6 +8,10 @@ window._ = function(s) {return ({'Dashboard':'仪表盘','Overview':'概览','Cl
 window.E=function(tag,attrs,children){
 	if(Array.isArray(tag)){var f=document.createDocumentFragment();tag.forEach(function(n){if(n)f.appendChild(n);});return f;}
 	var e=document.createElement(tag);if(attrs&&(!attrs.constructor||attrs.constructor===Object)){Object.keys(attrs).forEach(function(k){if(typeof attrs[k]==='function')e.addEventListener(k,attrs[k]);else if(attrs[k]!=null)e.setAttribute(k,attrs[k]);});}else{children=attrs;}
+	// Mirror LuCI's dom.append(): a lone string child is parsed as HTML (innerHTML),
+	// strings inside an array become text nodes. Keeping this identical to LuCI lets
+	// browser tests catch markup injection through untrusted names.
+	if(children!=null&&!Array.isArray(children)&&!(children instanceof Node)&&typeof children!=='function'){e.innerHTML=String(children);return e;}
 	function append(x){if(x==null)return;if(Array.isArray(x))x.forEach(append);else e.appendChild(x instanceof Node?x:document.createTextNode(String(x)));}append(children);return e;
 };
 var page=new URLSearchParams(location.search).get('page')||'overview';

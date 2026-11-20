@@ -47,8 +47,9 @@ return baseclass.extend({
 			this.render(tree);
 			if (refresh) session.setLocalData('unifi-menu-version', revision);
 		}, this)).catch(function() {
-			// Keep the original server-rendered content visible if menu loading fails.
+			// Page content stays visible; replace the empty menu with fixed links.
 			document.body.classList.add('uf-menu-failed');
+			return L.require('unifi.menu-fallback').then(function(fallback) { fallback.render(); }).catch(function() {});
 		});
 	},
 	render: function(tree) {
@@ -70,13 +71,13 @@ return baseclass.extend({
 		groups.forEach(function(group) {
 			var children = ui.menu.getChildren(group), active = current[1] === group.name, groupLabel = label(group), href = L.url(mode.name, group.name);
 			if (!children.length) {
-				nav.appendChild(E('li', {}, E('a', { 'class': 'uf-nav-item' + (active ? ' active' : ''), 'href': href, 'title': groupLabel }, [icon(group.name === 'unifi-clients' ? 'clients' : group.name), E('span', { 'class': 'uf-nav-label' }, groupLabel)]))); return;
+				nav.appendChild(E('li', {}, E('a', { 'class': 'uf-nav-item' + (active ? ' active' : ''), 'href': href, 'title': groupLabel }, [icon(group.name === 'unifi-clients' ? 'clients' : group.name), E('span', { 'class': 'uf-nav-label' }, [groupLabel])]))); return;
 			}
 			var details = E('details', { 'class': 'uf-nav-group' + (active ? ' active' : '') });
-			var summary = E('summary', { 'title': groupLabel }, [icon(group.name), E('span', { 'class': 'uf-nav-label' }, groupLabel)]);
-			var list = E('div', { 'class': 'uf-nav-popover' }, E('p', { 'class': 'uf-nav-heading' }, groupLabel));
+			var summary = E('summary', { 'title': groupLabel }, [icon(group.name), E('span', { 'class': 'uf-nav-label' }, [groupLabel])]);
+			var list = E('div', { 'class': 'uf-nav-popover' }, E('p', { 'class': 'uf-nav-heading' }, [groupLabel]));
 			children.forEach(function(child) {
-				list.appendChild(E('a', { 'href': L.url(mode.name, group.name, child.name), 'class': current[1] === group.name && current[2] === child.name ? 'active' : '' }, label(child)));
+				list.appendChild(E('a', { 'href': L.url(mode.name, group.name, child.name), 'class': current[1] === group.name && current[2] === child.name ? 'active' : '' }, [label(child)]));
 			});
 			details.appendChild(summary); details.appendChild(list);
 			details.addEventListener('toggle', function() { if (details.open) nav.querySelectorAll('details[open]').forEach(function(other) { if (other !== details) other.open = false; }); });
@@ -97,7 +98,7 @@ return baseclass.extend({
 		var ul = E('ul', { 'class': 'tabs' });
 		children.forEach(function(child) {
 			var active = L.env.dispatchpath[depth] === child.name;
-			ul.appendChild(E('li', { 'class': active ? 'active' : '' }, E('a', { 'href': L.url.apply(L, path.concat(child.name)) }, _(child.title))));
+			ul.appendChild(E('li', { 'class': active ? 'active' : '' }, E('a', { 'href': L.url.apply(L, path.concat(child.name)) }, [_(child.title)])));
 			if (active) self.tabs(child, path.concat(child.name), depth + 1);
 		});
 		box.prepend(ul); box.style.display = '';

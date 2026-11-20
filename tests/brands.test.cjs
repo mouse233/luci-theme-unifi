@@ -102,7 +102,8 @@ test('every bundled assignment returns its original name with longest-prefix pre
   }
   assert.ok(cases.length > 50000);
   for (const mac of cases) {
-    const expected = [36, 28, 24].map(bits => reference[bits].get(mac.slice(0, bits / 4))).find(Boolean);
+    // Original registry names, only with the export's HTML escaping of '&' undone.
+    const expected = [36, 28, 24].map(bits => reference[bits].get(mac.slice(0, bits / 4))).find(Boolean).replace(/&amp;/g, '&');
     const id = brands.identify('', mac);
     assert.equal(id.name, expected, mac); assert.equal(id.source, 'mac', mac);
   }
@@ -133,4 +134,9 @@ test('separate data, mapping and SVG modules share a snapshot and retain source 
     'https://standards-oui.ieee.org/oui36/oui36.csv', 'https://standards-oui.ieee.org/iab/iab.csv']) assert.ok(sources[url]);
   assert.equal(Object.keys(sources).some(url => /nmap/.test(url)), false);
   for (const item of Object.values(sources)) assert.match(item.sha256, /^[0-9a-f]{64}$/);
+});
+
+test('registry names that the IEEE export HTML-escapes are shown decoded', () => {
+  const id = brands.identify('', '34:4F:5C:00:00:01');
+  assert.equal(id.name, 'R&M AG'); assert.equal(id.source, 'mac');
 });

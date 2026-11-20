@@ -11,7 +11,9 @@
 
 var chinese=/^zh/.test(document.documentElement.lang||navigator.language);
 function t(zh,en){return chinese?zh:en;}
-function node(tag,cls,content){return E(tag,{'class':cls||''},content==null?[]:content);}
+// LuCI's E() parses a lone string child as HTML; always pass an array
+// so that host names, SSIDs and vendor names are inserted as text nodes.
+function node(tag,cls,content){return E(tag,{'class':cls||''},content==null?[]:Array.isArray(content)?content:[content]);}
 function rate(kbps){return kbps==null?'—':(kbps>=1000?(kbps/1000).toFixed(1)+' Mbps':kbps.toFixed(0)+' Kbps');}
 function ago(ms){return ms==null?'—':ms<1000?t('刚刚','Just now'):ms<60000?Math.floor(ms/1000)+t(' 秒前','s ago'):Math.floor(ms/60000)+t(' 分钟前','m ago');}
 function status(row){return {online:t('在线','Online'),offline:t('离线','Offline'),unknown:'—'}[row.status]||'—';}
@@ -50,7 +52,9 @@ return baseclass.extend({
 		var root=this.layout();this.accept(data);
 		this.poller=L.bind(function(){if(!document.hidden&&!this.busy)return this.refresh();},this);
 		poll.add(this.poller,Number(settings.get('client_refresh')));
-		window.addEventListener('pagehide',L.bind(function(){this.disposed=true;poll.remove(this.poller);},this),{once:true});
+		window.addEventListener('pagehide',L.bind(function(){this.disposed=true;poll.remove(this.poller);},this));
+		// A page restored from the back/forward cache must resume polling and manual refresh.
+		window.addEventListener('pageshow',L.bind(function(ev){if(!ev.persisted||!this.disposed)return;this.disposed=false;poll.add(this.poller,Number(settings.get('client_refresh')));this.refresh();},this));
 		return root;
 	},
 	activeColumns:function(){
@@ -120,7 +124,7 @@ return baseclass.extend({
 		this.refs.total.textContent=String(this.rows.length);var rows=this.rows;
 		Object.keys(this.refs.groups).forEach(L.bind(function(g){this.refs.groups[g].count.textContent=String(g==='all'?rows.length:rows.filter(function(r){return g==='associated'?r.associated:g==='neighbor'?r.neighbor:g==='lease'?r.lease:r.reserved;}).length);},this));
 		var nets=[];rows.forEach(function(r){r.networks.forEach(function(n){if(nets.indexOf(n)<0)nets.push(n);});});nets.sort();
-		if(JSON.stringify(nets)!==this.networkNames){this.refs.network.replaceChildren(E('option',{value:''},t('全部网络','All networks')));nets.forEach(L.bind(function(n){this.refs.network.appendChild(E('option',{value:n},n));},this));this.networkNames=JSON.stringify(nets);}
+		if(JSON.stringify(nets)!==this.networkNames){this.refs.network.replaceChildren(E('option',{value:''},t('全部网络','All networks')));nets.forEach(L.bind(function(n){this.refs.network.appendChild(E('option',{value:n},[n]));},this));this.networkNames=JSON.stringify(nets);}
 		if(this.state.network&&nets.indexOf(this.state.network)<0)this.state.network='';this.refs.network.value=this.state.network;
 		this.refs.notice.textContent=data.unavailable&&data.unavailable.length?t('部分数据源不可用：','Some sources are unavailable: ')+data.unavailable.map(function(key){return {presence:t('在线状态','Online status'),leases:'DHCP',hints:t('主机提示','Host hints'),arp:t('邻居记录','Neighbors'),statics:t('静态租约','Reservations'),wifi:t('无线关联','Wi-Fi associations'),devices:t('设备','Devices'),wans:t('上行网络','WAN networks'),networks:t('网络','Networks')}[key]||key;}).join(' · '):'';
 		this.refs.updated.textContent=t('更新于 ','Updated ')+new Date().toLocaleTimeString(chinese?'zh-CN':undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'});
@@ -163,7 +167,7 @@ return baseclass.extend({
 	},
 	cell:function(r,key){
 		if(key==='name')return E('button',{'type':'button','class':'uf-client-name','title':name(r)+' · '+(r.mac||r.id),'aria-label':t('查看 ','View ')+name(r)+t(' 详情',' details'),'click':L.bind(function(){this.detail(r,true);},this)},[brands.avatar(r.identity,false,(r.identity.name||deviceType(r.identity.type))+' · '+identitySource(r.identity)),node('strong','',name(r))]);
-		if(key==='vendor')return E('span',{'class':'uf-client-vendor','title':r.identity.name?identitySource(r.identity):r.localMac?t('本地管理地址','Locally administered'):t('未匹配厂商','No vendor match')},r.identity.name||t('未知','Unknown'));
+		if(key==='vendor')return E('span',{'class':'uf-client-vendor','title':r.identity.name?identitySource(r.identity):r.localMac?t('本地管理地址','Locally administered'):t('未匹配厂商','No vendor match')},[r.identity.name||t('未知','Unknown')]);
 		if(key==='status')return node('span','uf-client-status '+r.status,status(r));
 		if(key==='connection')return E('span',{'class':'uf-client-connection'},[icons.create(r.associated?'wifi':'connection'),node('span','',r.associated?(r.ssid||'Wi-Fi'):(r.device||t('未知','Unknown')))]);
 		if(key==='signal'){if(r.signal==null)return node('span','uf-muted','—');var bars=node('span','uf-client-signal');for(var i=0;i<4;i++)bars.appendChild(E('i',{'class':r.signal>[-90,-80,-70,-60][i]?'lit':''}));return E('span',{'class':'uf-client-signal-value'},[bars,r.signal+' dBm']);}

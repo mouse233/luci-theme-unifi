@@ -22,13 +22,21 @@ function ipv4(v) {
 	for (let x in p) { if (!match(x, /^\d{1,3}$/) || +x > 255) return null; n = n * 256 + +x; }
 	return n;
 }
+function update_inventory(map, arp) {
+	for (let m, d in map) {
+		let old = devices[m];
+		if (old && (old.ip != d.ip || old.device != d.device || d.conflict != old.conflict)) { states.reset(m); delete trusted[m]; }
+	}
+	for (let m in devices) if (!map[m]) { states.remove(m); delete trusted[m]; }
+	devices = map; bindings = arp;
+}
 function inventory() {
 	let networks = (bus.call('network.interface', 'dump', {}) ?? {}).interface ?? [];
 	let lan = null;
 	for (let n in networks) if (n.interface == 'lan' && n.up && n.l3_device && length(n['ipv4-address'] ?? []) == 1) lan = n;
-	if (!lan) { devices = {}; bindings = {}; return; }
+	if (!lan) { update_inventory({}, {}); return; }
 	let a = lan['ipv4-address'][0], base = ipv4(a.address), bits = +a.mask;
-	if (base == null || bits < 8 || bits > 30 || !match(lan.l3_device, /^[a-zA-Z0-9_.-]+$/)) { devices = {}; bindings = {}; return; }
+	if (base == null || bits < 8 || bits > 30 || !match(lan.l3_device, /^[a-zA-Z0-9_.-]+$/)) { update_inventory({}, {}); return; }
 	let block = 2 ** (32 - bits), map = {}, byip = {};
 	function add(m, ip) {
 		m = mac(m); let n = ipv4(ip);
@@ -48,14 +56,10 @@ function inventory() {
 		let p = split(trim(line), /\s+/);
 		if (length(p) >= 6 && p[5] == lan.l3_device && p[2] == '0x2' && mac(p[3])) { add(p[3], p[0]); arp[p[0]] = mac(p[3]); }
 	}
-	for (let m, d in map) {
-		let old = devices[m];
-		if (old && (old.ip != d.ip || old.device != d.device || d.conflict != old.conflict)) { states.reset(m); delete trusted[m]; }
-	}
-	for (let m in devices) if (!map[m]) { states.reset(m); delete trusted[m]; }
-	devices = map; bindings = arp;
+	update_inventory(map, arp);
 	// REACHABLE is a kernel confirmation, unlike a merely retained STALE entry.
-	let f = popen('/usr/bin/ip -4 neigh show 2>/dev/null', 'r');
+	// OpenWrt installs ip-tiny/ip-full and the BusyBox applet as /sbin/ip.
+	let f = popen('for ip in /sbin/ip /usr/sbin/ip /usr/bin/ip; do [ -x "$ip" ] && exec "$ip" -4 neigh show; done 2>/dev/null', 'r');
 	let neighbours = f ? f.read('all') : '';
 	if (f) f.close();
 	for (let line in split(neighbours ?? '', '\n')) {
@@ -91,6 +95,7 @@ function probe(id, now) {
 		if (code == 0 && reply && reply[1] == d.ip && mac(reply[2]) == id) { trusted[id] = monotime() + 120; states.evidence(id, monotime(), time()); }
 		else if (reply && mac(reply[2]) != id) { live.conflict = true; delete trusted[id]; states.reset(id); }
 		else if (code == 1 && match(text, /Sent 1 probes/) && match(text, /Received 0 response/)) states.failure(id, monotime(), generation, true);
+		else states.postpone(id, monotime());
 	});
 }
 let object = bus.publish('unifi.presence', { list: { args: { ubus_rpc_session: '' }, call: function(req) {

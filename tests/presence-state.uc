@@ -27,4 +27,8 @@ generation = a.generation;
 s.reset('a');
 s.failure('a', 401, generation, true);
 check(s.get('a').status == 'unknown' && s.get('a').failures == 0, 'identity reset invalidates probes');
+s.postpone('a', 500);
+check(s.get('a').next_probe == 560 && s.get('a').failures == 0 && s.get('a').status == 'unknown', 'inconclusive probe is postponed without counting');
+s.remove('a');
+check(s.get('a').generation == 0 && s.get('a').next_probe == 0, 'departed device entry is removed');
 print('presence state transitions passed\n');

@@ -15,6 +15,15 @@ export function create_presence_state() {
 			let old = get(id);
 			entries[id] = { status: 'unknown', last_seen: 0, failures: 0, next_probe: 0, generation: old.generation + 1 };
 		},
+		// Forget a device that left the inventory so the table does not grow forever.
+		remove: function(id) {
+			delete entries[id];
+		},
+		// An inconclusive probe (command error, unexpected reply) is neither evidence
+		// nor a timeout, but it must not be retried on the very next tick.
+		postpone: function(id, now) {
+			get(id).next_probe = now + 60;
+		},
 		evidence: function(id, now, wall) {
 			let item = get(id);
 			item.status = 'online';

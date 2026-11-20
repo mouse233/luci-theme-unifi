@@ -94,7 +94,9 @@ function identify(hostname, address) {
 	if (valid && !result.localMac) {
 		var organization = registryMatch(mac);
 		if (organization) {
-			result.name = organization;
+			// The IEEE export carries a few names HTML-escaped ("R&amp;M AG"). Keep the
+			// registry string for lookups, show the decoded name as text.
+			result.name = organization.replace(/&amp;/g, '&');
 			result.key = Object.prototype.hasOwnProperty.call(catalog.organizations, organization) ? catalog.organizations[organization] : null;
 			result.source = 'mac';
 		}
@@ -115,7 +117,7 @@ function avatar(identity, large, label) {
 	var node = E('span', { 'class': 'uf-client-avatar' + (brand ? ' uf-brand-avatar' : '') + (large ? ' large' : ''),
 		'title': label, 'aria-hidden': 'true', 'data-brand': identity.key || '' });
 	if (brand && brand.color) node.style.color = brand.color;
-	if (brand && !paths) node.appendChild(E('b', {}, brand.letter || (brand.name || identity.name || '?').charAt(0)));
+	if (brand && !paths) node.appendChild(E('b', {}, [brand.letter || (brand.name || identity.name || '?').charAt(0)]));
 	else {
 		svg.setAttribute('viewBox', '0 0 24 24');
 		if (!brand) { svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', '1.4'); }
